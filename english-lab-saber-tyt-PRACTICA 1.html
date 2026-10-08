@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Lab Saber TyT – Curso preparatorio de inglés</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f6; --surface:#ffffff; --surface2:#f6f8fb; --ink:#172033; --muted:#566079; --line:#dfe4ec;
+  --primary:#1f3a68; --primary-2:#2d5296; --primary-soft:#e4eaf5; --on-primary:#ffffff;
+  --accent:#e3a72f; --accent-soft:#fbf1dc; --accent-ink:#6b4a07;
+  --ok:#137a64; --ok-soft:#dff2ec; --bad:#b93b34; --bad-soft:#f9e3e1; --flag:#b86b12;
+  --shadow:0 1px 2px rgba(23,32,51,.05),0 8px 24px rgba(23,32,51,.06);
+  --r-lg:18px; --r-md:12px; --r-sm:8px;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1522; --surface:#172033; --surface2:#1c2740; --ink:#e8ecf4; --muted:#a2acc2; --line:#2a3652;
+    --primary:#8fb0ec; --primary-2:#a9c3f3; --primary-soft:#22335a; --on-primary:#0f1522;
+    --accent:#f0bb52; --accent-soft:#3a2f17; --accent-ink:#f6d58e;
+    --ok:#4fc4a3; --ok-soft:#153a33; --bad:#f08079; --bad-soft:#3d1f22; --flag:#f0a64f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1522; --surface:#172033; --surface2:#1c2740; --ink:#e8ecf4; --muted:#a2acc2; --line:#2a3652;
+  --primary:#8fb0ec; --primary-2:#a9c3f3; --primary-soft:#22335a; --on-primary:#0f1522;
+  --accent:#f0bb52; --accent-soft:#3a2f17; --accent-ink:#f6d58e;
+  --ok:#4fc4a3; --ok-soft:#153a33; --bad:#f08079; --bad-soft:#3d1f22; --flag:#f0a64f;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+img{max-width:100%}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* Barra superior */
+.appbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--primary);color:#fff}
+:root[data-theme="dark"] .appbar{background:#13203a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .appbar{background:#13203a}}
+.appbar-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em;cursor:pointer;background:none;border:0;color:#fff;padding:0}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#1f3a68;display:grid;place-items:center;font-weight:800;font-size:15px}
+.brand small{display:block;font-weight:500;font-size:12px;opacity:.75;margin-top:-2px}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav button{background:transparent;border:0;color:#dfe7f5;padding:8px 14px;border-radius:999px;font-weight:600;font-size:14.5px;cursor:pointer}
+.nav button:hover{background:rgba(255,255,255,.1)}
+.nav button.active{background:#fff;color:#1f3a68}
+.theme-btn{background:rgba(255,255,255,.12);border:0;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px}
+@media (max-width:640px){.brand small{display:none}.nav button{padding:7px 10px;font-size:13.5px}.appbar-in{gap:8px;padding:10px 12px}}
+@media (max-width:420px){.brand-text{display:none}}
+
+main{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.015em;margin:0 0 .5em}
+h1{font-size:clamp(28px,4.4vw,42px);font-weight:800}
+h2{font-size:clamp(22px,3vw,28px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--line);background:var(--surface);padding:11px 18px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;color:var(--ink);transition:background .15s,border-color .15s}
+.btn:hover{border-color:var(--primary-2)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.btn.primary:hover{background:var(--primary-2);border-color:var(--primary-2)}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:#2a1d02}
+.btn.ghost{background:transparent}
+.btn.danger{border-color:var(--bad);color:var(--bad)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.sm{padding:7px 13px;font-size:13.5px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* Portada */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:stretch;margin-bottom:34px}
+.hero-main{padding:8px 0}
+.hero-main p{font-size:17.5px;color:var(--muted);max-width:58ch}
+.sheet{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px;border-top:6px solid var(--accent)}
+.sheet h3{font-size:16px;margin-bottom:12px}
+.sheet-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.sheet-row:last-child{border-bottom:0}
+.sheet-row .n{font-weight:800;width:26px;color:var(--muted)}
+.bubbles{display:flex;gap:6px;margin-left:auto}
+.bub{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;font-size:11.5px;font-weight:700;color:var(--muted)}
+.bub.on{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.stats{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
+.stat b{display:block;font-size:26px;font-weight:800;color:var(--primary)}
+.stat span{font-size:13.5px;color:var(--muted)}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:38px}
+.path{background:var(--surface);border-radius:var(--r-md);padding:20px;border:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.path .step{font-weight:800;color:var(--accent-ink);background:var(--accent-soft);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px}
+.path h3{margin:6px 0 2px}
+.path p{font-size:14.5px;color:var(--muted);flex:1}
+@media (max-width:820px){.paths{grid-template-columns:1fr}}
+
+.parts-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow);font-size:14.5px}
+.parts-table th,.parts-table td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.parts-table th{background:var(--surface2);font-weight:700;font-size:13.5px;color:var(--muted)}
+.parts-table tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--primary-soft);color:var(--primary)}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Lecciones */
+.lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.lcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 18px 16px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s}
+.lcard:hover{border-color:var(--primary-2)}
+.lcard .top{display:flex;align-items:center;gap:10px}
+.lnum{width:38px;height:38px;border-radius:10px;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;font-weight:800}
+.lcard h3{font-size:17px;margin:0}
+.lcard p{font-size:14px;color:var(--muted);margin:0;flex:1}
+.lprog{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+.bar{flex:1;height:7px;border-radius:99px;background:var(--surface2);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--ok);border-radius:99px}
+
+.crumb{background:none;border:0;color:var(--primary);font-weight:700;cursor:pointer;padding:0;margin-bottom:14px;font-size:14.5px}
+.lhead{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.lhead .lnum{width:52px;height:52px;font-size:22px;border-radius:14px;flex:none}
+.tabs{display:flex;gap:6px;background:var(--surface);padding:5px;border-radius:999px;border:1px solid var(--line);width:max-content;max-width:100%;margin-bottom:22px}
+.tabs button{border:0;background:transparent;padding:9px 18px;border-radius:999px;font-weight:700;cursor:pointer;color:var(--muted);font-size:14.5px}
+.tabs button.on{background:var(--primary);color:var(--on-primary)}
+
+/* Teoría */
+.theory{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:30px clamp(18px,4vw,40px);max-width:880px}
+.theory h3{margin-top:1.6em;font-size:20px;color:var(--primary)}
+.theory h3:first-child{margin-top:0}
+.theory p,.theory li{max-width:72ch}
+.theory ul{padding-left:1.2em;margin:0 0 1em}
+.theory li{margin-bottom:.35em}
+.theory .en{font-style:italic;color:var(--primary-2);font-weight:600}
+.theory table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:14.5px}
+.theory th,.theory td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+.theory th{background:var(--surface2);font-weight:700}
+.tip,.warn,.note{border-radius:var(--r-md);padding:14px 16px;margin:16px 0;font-size:15px}
+.tip{background:var(--ok-soft);border-left:5px solid var(--ok)}
+.warn{background:var(--bad-soft);border-left:5px solid var(--bad)}
+.note{background:var(--accent-soft);border-left:5px solid var(--accent)}
+.tip b:first-child,.warn b:first-child,.note b:first-child{display:block;margin-bottom:3px}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;padding:10px 14px;background:var(--surface2);border-radius:var(--r-sm);margin:8px 0;font-size:15px}
+.ex .en{font-style:italic}
+@media (max-width:600px){.ex{grid-template-columns:1fr}}
+
+/* Práctica */
+.practice{max-width:760px}
+.dots{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.dots i{width:28px;height:8px;border-radius:99px;background:var(--line)}
+.dots i.cur{background:var(--primary)}
+.dots i.ok{background:var(--ok)}
+.dots i.bad{background:var(--bad)}
+.qcard{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:24px clamp(16px,3.5vw,32px)}
+.qmeta{font-size:13.5px;color:var(--muted);font-weight:700;margin-bottom:10px}
+.qtext{font-size:18.5px;font-weight:600;margin:4px 0 18px}
+.gapline{display:inline-block;min-width:64px;border-bottom:2.5px solid var(--accent);margin:0 3px;height:1.1em;vertical-align:baseline}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--surface2);border:1.5px solid var(--line);border-radius:var(--r-md);padding:12px 14px;cursor:pointer;font-size:16px;font-weight:500;transition:border-color .12s,background .12s}
+.opt:hover:not([disabled]){border-color:var(--primary-2)}
+.opt .lt{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--muted);display:grid;place-items:center;font-weight:800;font-size:13.5px;color:var(--muted)}
+.opt.sel{border-color:var(--primary);background:var(--primary-soft)}
+.opt.sel .lt{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+.opt.correct .lt{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .lt{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt[disabled]{cursor:default}
+.opts.two{display:grid;grid-template-columns:1fr 1fr}
+@media (max-width:520px){.opts.two{grid-template-columns:1fr}}
+
+.fb{margin-top:18px;border-radius:var(--r-md);padding:16px 18px;animation:pop .25s ease-out}
+.fb.ok{background:var(--ok-soft);border:1.5px solid var(--ok)}
+.fb.bad{background:var(--bad-soft);border:1.5px solid var(--bad)}
+.fb h4{margin:0 0 6px;font-size:17px}
+.fb.ok h4{color:var(--ok)} .fb.bad h4{color:var(--bad)}
+.fb p{margin:0 0 6px;font-size:15px}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Avisos y diálogos */
+.sign{position:relative;margin:4px auto 18px;max-width:420px;background:#fdfbf3;color:#1a1a1a;border:3px solid #2b2b2b;border-radius:10px;padding:22px 26px;text-align:center;font-weight:800;font-size:19px;line-height:1.35;box-shadow:inset 0 0 0 5px #fdfbf3,inset 0 0 0 7px #2b2b2b}
+.sign::before,.sign::after{content:"";position:absolute;top:10px;width:8px;height:8px;border-radius:50%;background:#2b2b2b}
+.sign::before{left:10px}.sign::after{right:10px}
+.dialog{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.bubble{max-width:85%;padding:11px 15px;border-radius:16px;font-size:16.5px}
+.bubble.a{background:var(--primary-soft);border-bottom-left-radius:4px}
+.bubble.b{align-self:flex-end;background:var(--accent-soft);border-bottom-right-radius:4px;color:var(--muted)}
+.bubble b{margin-right:6px}
+.passage{background:var(--surface2);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 20px;margin-bottom:18px;font-family:var(--serif);font-size:17.5px;line-height:1.7}
+.passage h4{font-family:var(--sans);font-size:17px;margin-bottom:8px}
+.passage p{margin:0 0 .8em}
+details.passage summary{font-family:var(--sans);font-weight:700;cursor:pointer;font-size:15px}
+
+/* Resumen de lección */
+.summary{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:28px clamp(18px,4vw,36px)}
+.big-score{font-size:56px;font-weight:800;line-height:1;color:var(--primary)}
+.mistake{border-top:1px solid var(--line);padding:12px 0;font-size:15px}
+.mistake .c{color:var(--ok);font-weight:700}
+
+/* Simulacro */
+.simbar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px);z-index:20;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow);padding:10px 14px;display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.timer{display:flex;align-items:center;gap:8px;font-weight:800;font-size:22px;font-variant-numeric:tabular-nums;color:var(--primary);padding:4px 12px;border-radius:999px;background:var(--primary-soft)}
+.timer.warn{background:var(--accent-soft);color:var(--accent-ink)}
+.timer.danger{background:var(--bad-soft);color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.7}}
+.simprog{flex:1;min-width:140px}
+.simprog .bar{height:9px}
+.simprog .bar i{background:var(--primary)}
+.simprog small{color:var(--muted);font-size:12.5px;font-weight:600}
+.sechead{margin-bottom:14px}
+.sechead h2{font-size:21px;margin-bottom:4px}
+.sechead p{color:var(--muted);font-size:14.5px;margin:0;max-width:80ch}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:start}
+.textpanel{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px 24px;font-family:var(--serif);font-size:17.5px;line-height:1.75;max-height:calc(100vh - 230px);overflow:auto;position:sticky;top:150px}
+.textpanel h4{font-family:var(--sans);font-size:18px;margin-bottom:10px}
+.textpanel p{margin:0 0 .9em}
+.gap{font-family:var(--sans);font-size:14.5px;font-weight:700;display:inline-block;padding:0 8px;border-radius:6px;background:var(--surface2);border:1.5px dashed var(--muted);cursor:pointer;line-height:1.6;color:var(--muted)}
+.gap.filled{border-style:solid;border-color:var(--primary);color:var(--primary);background:var(--primary-soft)}
+.gap.cur{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink);box-shadow:0 0 0 3px var(--accent-soft)}
+@media (max-width:860px){.split{grid-template-columns:1fr}.textpanel{position:static;max-height:42vh}}
+.simnav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
+.flagbtn.on{border-color:var(--flag);color:var(--flag);background:var(--accent-soft)}
+.navpanel{background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--line);padding:18px;margin-bottom:18px}
+.navpart{margin-bottom:12px}
+.navpart small{display:block;font-weight:700;color:var(--muted);font-size:12.5px;margin-bottom:6px}
+.navgrid{display:flex;flex-wrap:wrap;gap:6px}
+.navgrid button{width:38px;height:36px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface2);font-weight:700;font-size:13.5px;cursor:pointer;position:relative}
+.navgrid button.ans{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.navgrid button.cur{outline:3px solid var(--accent);outline-offset:1px}
+.navgrid button.flg::after{content:"";position:absolute;top:-4px;right:-4px;width:11px;height:11px;border-radius:50%;background:var(--flag);border:2px solid var(--surface)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:13px;height:13px;border-radius:4px;display:inline-block;border:1.5px solid var(--line);background:var(--surface2)}
+.legend i.a{background:var(--primary);border-color:var(--primary)}
+.legend i.f{background:var(--flag);border-color:var(--flag);border-radius:50%}
+.bankbox{border:1.5px dashed var(--line);border-radius:var(--r-md);padding:10px 14px;margin-bottom:16px;font-size:14px;color:var(--muted)}
+
+/* Intro simulacro */
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:22px}
+@media (max-width:820px){.intro{grid-template-columns:1fr}}
+.panel{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:24px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.fact{background:var(--surface2);border-radius:var(--r-md);padding:14px;text-align:center}
+.fact b{display:block;font-size:28px;font-weight:800;color:var(--primary)}
+.fact span{font-size:13px;color:var(--muted)}
+.rules li{margin-bottom:8px;font-size:15px}
+.hist{font-size:14.5px}
+.hist div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}
+
+/* Resultados */
+.res-top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:26px clamp(18px,4vw,36px);margin-bottom:20px}
+@media (max-width:640px){.res-top{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.ring{position:relative;width:170px;height:170px}
+.ring svg{transform:rotate(-90deg)}
+.ring .val{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ring .val b{font-size:46px;font-weight:800;line-height:1;display:block}
+.ring .val span{font-size:13px;color:var(--muted)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.chip{padding:7px 13px;border-radius:999px;font-weight:700;font-size:14px;background:var(--surface2);border:1px solid var(--line)}
+.chip.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.chip.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.level{display:inline-flex;align-items:center;gap:10px;background:var(--accent-soft);color:var(--accent-ink);padding:8px 14px;border-radius:var(--r-md);font-weight:700;font-size:14.5px}
+.byparts{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:22px clamp(18px,4vw,30px);margin-bottom:20px}
+.pbar{display:grid;grid-template-columns:minmax(150px,230px) 1fr 64px;gap:14px;align-items:center;padding:8px 0;font-size:14.5px}
+.pbar .bar{height:12px}
+.pbar .bar i{background:var(--primary)}
+.pbar b{text-align:right}
+@media (max-width:560px){.pbar{grid-template-columns:1fr 54px}.pbar .bar{grid-column:1/-1;order:3}}
+.rev{background:var(--surface);border-radius:var(--r-md);border:1px solid var(--line);padding:18px 20px;margin-bottom:12px;border-left:6px solid var(--line)}
+.rev.ok{border-left-color:var(--ok)} .rev.bad{border-left-color:var(--bad)} .rev.blank{border-left-color:var(--muted)}
+.rev .h{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--muted);font-weight:700;margin-bottom:8px;flex-wrap:wrap}
+.rev .q{font-weight:600;margin-bottom:10px}
+.rev .ans{font-size:15px;margin:3px 0}
+.rev .ans.y{color:var(--bad)} .rev .ans.c{color:var(--ok);font-weight:700}
+.rev .exp{margin-top:10px;font-size:14.5px;background:var(--surface2);padding:10px 12px;border-radius:var(--r-sm)}
+.rev .sign{font-size:15px;padding:12px 16px;margin:6px 0 10px;max-width:340px}
+.filters{display:flex;gap:6px;margin:14px 0 16px;flex-wrap:wrap}
+
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(10,15,28,.55);display:grid;place-items:center;z-index:100;padding:20px}
+.modal{background:var(--surface);border-radius:var(--r-lg);max-width:460px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:pop .2s ease-out}
+.modal p{color:var(--muted)}
+.modal .row{justify-content:flex-end;margin-top:16px}
+footer{text-align:center;font-size:13px;color:var(--muted);padding:10px 20px 30px}
+</style>
+</head>
+<body>
+<header class="appbar">
+  <div class="appbar-in">
+    <button class="brand" data-go="home" aria-label="Ir al inicio">
+      <span class="brand-mark">TyT</span>
+      <span class="brand-text">English Lab<small>Preparatorio Saber TyT – Inglés</small></span>
+    </button>
+    <nav class="nav" aria-label="Secciones">
+      <button data-go="home">Inicio</button>
+      <button data-go="lessons">Lecciones</button>
+      <button data-go="simIntro">Simulacro</button>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema claro u oscuro">◐</button>
+  </div>
+</header>
+<main id="app"></main>
+<div id="modalRoot"></div>
+<footer>Recurso de práctica elaborado a partir del modelo de preguntas del cuadernillo Saber TyT – Módulo de inglés (ICFES). Las preguntas son originales, con fines pedagógicos.</footer>
+<script>
+const LESSONS = [
+{
+id:1, tag:"Parte 1", title:"Vocabulario y definiciones",
+desc:"Relaciona descripciones con palabras: lugares, objetos, profesiones y entretenimiento.",
+ask:"Which word matches the description?",
+theory:`
+<h3>¿Qué evalúa esta parte?</h3>
+<p>En la <b>Parte 1</b> lees descripciones cortas en inglés, por ejemplo <span class="en">"People use it to find an address"</span>, y debes relacionar cada una con una palabra de una lista (A–H). Siempre <b>sobran opciones</b>: no todas las palabras se usan. Esta parte mide tu <b>vocabulario</b> sobre temas de la vida cotidiana.</p>
+
+<h3>Estructuras típicas de una definición</h3>
+<p>Las descripciones casi siempre usan las mismas fórmulas. Si las reconoces, sabrás de inmediato si buscas un objeto, un lugar o una persona.</p>
+<div class="scroll-x"><table>
+<tr><th>Estructura</th><th>Significado</th><th>Ejemplo</th></tr>
+<tr><td class="en">You use this to + verbo</td><td>Sirve para… (objeto)</td><td><span class="en">You use this to cut paper.</span> → scissors</td></tr>
+<tr><td class="en">People go (here) to + verbo</td><td>La gente va (aquí) para… (lugar)</td><td><span class="en">People go here to see a film.</span> → cinema</td></tr>
+<tr><td class="en">It's a place where…</td><td>Es un lugar donde…</td><td><span class="en">It's a place where you buy medicine.</span> → pharmacy</td></tr>
+<tr><td class="en">This person + verbo con -s</td><td>Esta persona… (profesión)</td><td><span class="en">This person repairs cars.</span> → mechanic</td></tr>
+<tr><td class="en">You need this to…</td><td>Necesitas esto para…</td><td><span class="en">You need this to enter a concert.</span> → ticket</td></tr>
+<tr><td class="en">You can find this in…</td><td>Puedes encontrar esto en…</td><td><span class="en">You can find this in a kitchen.</span> → oven</td></tr>
+</table></div>
+
+<h3>Vocabulario por temas frecuentes</h3>
+<div class="scroll-x"><table>
+<tr><th>Tema</th><th>Palabras clave (inglés → español)</th></tr>
+<tr><td>Entretenimiento</td><td><span class="en">ticket</span> boleto · <span class="en">film / movie</span> película · <span class="en">DVD</span> · <span class="en">comics</span> historietas · <span class="en">channel</span> canal · <span class="en">stage</span> escenario</td></tr>
+<tr><td>Lugares</td><td><span class="en">library</span> biblioteca · <span class="en">bookstore</span> librería · <span class="en">bakery</span> panadería · <span class="en">pharmacy</span> farmacia · <span class="en">museum</span> museo · <span class="en">butcher's</span> carnicería</td></tr>
+<tr><td>Profesiones</td><td><span class="en">waiter</span> mesero · <span class="en">nurse</span> enfermero(a) · <span class="en">mechanic</span> mecánico · <span class="en">pilot</span> piloto · <span class="en">farmer</span> campesino · <span class="en">cashier</span> cajero</td></tr>
+<tr><td>Casa</td><td><span class="en">fridge</span> nevera · <span class="en">oven</span> horno · <span class="en">cupboard</span> alacena · <span class="en">pillow</span> almohada · <span class="en">blanket</span> cobija · <span class="en">sheet</span> sábana</td></tr>
+<tr><td>Viajes</td><td><span class="en">passport</span> pasaporte · <span class="en">suitcase</span> maleta · <span class="en">map</span> mapa · <span class="en">platform</span> andén · <span class="en">tent</span> carpa</td></tr>
+<tr><td>Ropa y accesorios</td><td><span class="en">sneakers</span> tenis · <span class="en">scarf</span> bufanda · <span class="en">gloves</span> guantes · <span class="en">watch</span> reloj de pulsera · <span class="en">ring</span> anillo</td></tr>
+</table></div>
+
+<div class="warn"><b>Cuidado con los falsos amigos</b><span class="en">library</span> es biblioteca (no librería); <span class="en">bookstore</span> es librería. <span class="en">carpet</span> es alfombra (carpeta es <span class="en">folder</span>). <span class="en">actually</span> significa "en realidad" (actualmente es <span class="en">currently</span>).</div>
+
+<div class="tip"><b>Estrategia TyT</b>1) Subraya el verbo clave de la descripción (<span class="en">read, watch, find, sleep…</span>). 2) Piensa en la palabra <i>antes</i> de mirar las opciones. 3) Tacha las que ya usaste. En el cuadernillo, <span class="en">"You use this to watch videos or movies"</span> es <b>DVD</b>, mientras que <span class="en">"People go to the cinema to see one of these"</span> es <b>films</b>: ambas hablan de películas, pero el contexto (en casa o en el cine) decide.</div>
+`,
+qs:[
+{q:"This document shows your nationality. You need it to travel to another country.", o:["ticket","passport","map","suitcase"], a:1, e:"<b>Passport</b> = pasaporte, el documento que muestra tu nacionalidad. <i>Ticket</i> (boleto) también se usa al viajar, pero no muestra tu nacionalidad."},
+{q:"People go here to borrow books for free.", o:["bookstore","museum","library"], a:2, e:"<b>Library</b> = biblioteca, donde se <i>prestan</i> (borrow) libros. En una <i>bookstore</i> (librería) los libros se compran. Es un falso amigo muy frecuente."},
+{q:"This person brings food and drinks to your table in a restaurant.", o:["waiter","chef","cashier"], a:0, e:"<b>Waiter</b> = mesero. El <i>chef</i> cocina y el <i>cashier</i> (cajero) cobra."},
+{q:"You keep food and drinks cold in this.", o:["oven","cupboard","fridge"], a:2, e:"<b>Fridge</b> = nevera. El <i>oven</i> (horno) calienta y el <i>cupboard</i> (alacena) guarda cosas, pero no las enfría."},
+{q:"You can see old and famous objects and paintings in this place.", o:["museum","stadium","bakery"], a:0, e:"<b>Museum</b> = museo, lugar donde se exhiben objetos antiguos y pinturas."},
+{q:"People wear this on their wrist to know the time.", o:["calendar","watch","ring"], a:1, e:"<b>Watch</b> = reloj de pulsera (wrist = muñeca). Un <i>calendar</i> muestra la fecha y un <i>ring</i> (anillo) va en el dedo."},
+{q:"This person helps doctors and takes care of patients in a hospital.", o:["mechanic","pilot","nurse"], a:2, e:"<b>Nurse</b> = enfermero(a). La clave es <i>patients</i> (pacientes) y <i>hospital</i>."},
+{q:"You wear these on your feet when you play sports.", o:["sneakers","gloves","scarf"], a:0, e:"<b>Sneakers</b> = tenis (zapatos deportivos). <i>Gloves</i> van en las manos y <i>scarf</i> (bufanda) en el cuello."},
+{q:"You put your head on this when you sleep.", o:["blanket","pillow","sheet"], a:1, e:"<b>Pillow</b> = almohada. <i>Blanket</i> (cobija) y <i>sheet</i> (sábana) también están en la cama, pero no son para la cabeza."},
+{q:"People buy bread and cakes in this place.", o:["pharmacy","butcher's","bakery"], a:2, e:"<b>Bakery</b> = panadería. <i>Butcher's</i> es la carnicería y <i>pharmacy</i> la farmacia."}
+]},
+
+{
+id:2, tag:"Parte 2", title:"Avisos y letreros",
+desc:"Identifica dónde puedes ver un aviso: imperativos, prohibiciones y preposiciones de lugar.",
+ask:"Where can you see this notice?",
+theory:`
+<h3>¿Qué evalúa esta parte?</h3>
+<p>En la <b>Parte 2</b> aparece un aviso corto y la pregunta <span class="en">"Where can you see this notice?"</span> (¿Dónde puede ver este aviso?). Hay tres lugares posibles (A, B, C). Debes entender el mensaje y relacionarlo con el lugar más lógico.</p>
+
+<h3>El lenguaje de los avisos</h3>
+<p>Los avisos usan frases muy cortas. Estas son las formas gramaticales que más aparecen:</p>
+<div class="scroll-x"><table>
+<tr><th>Forma</th><th>Uso</th><th>Ejemplo</th></tr>
+<tr><td>Imperativo (verbo base)</td><td>Dar una instrucción</td><td class="en">Keep quiet. Push. Return books here.</td></tr>
+<tr><td><span class="en">Please + verbo</span></td><td>Instrucción amable</td><td class="en">Please put the books on the correct desk.</td></tr>
+<tr><td><span class="en">Do not / Don't + verbo</span></td><td>Prohibición</td><td class="en">Please do not take the flowers.</td></tr>
+<tr><td><span class="en">No + verbo-ing / sustantivo</span></td><td>Prohibición breve</td><td class="en">No smoking. No parking. No pets.</td></tr>
+<tr><td><span class="en">… not allowed / must not</span></td><td>Prohibición formal</td><td class="en">Food is not allowed. You must not run.</td></tr>
+<tr><td><span class="en">… only</span></td><td>Restricción</td><td class="en">Children under 6 only. Staff only.</td></tr>
+<tr><td>Voz pasiva</td><td>Regla general</td><td class="en">Helmets must be worn.</td></tr>
+</table></div>
+
+<h3>Vocabulario típico de avisos</h3>
+<ul>
+<li><span class="en">open / closed</span> abierto / cerrado · <span class="en">out of order</span> fuera de servicio · <span class="en">wet floor</span> piso mojado</li>
+<li><span class="en">sale / 20% off</span> rebaja / 20% de descuento · <span class="en">3 x 2</span> lleve tres pague dos · <span class="en">receipt</span> recibo</li>
+<li><span class="en">entrance / exit</span> entrada / salida · <span class="en">platform</span> andén · <span class="en">departure / arrival</span> salida / llegada · <span class="en">check-in</span> registro</li>
+<li><span class="en">lifeguard</span> salvavidas · <span class="en">fitting room</span> probador · <span class="en">visiting hours</span> horario de visitas · <span class="en">lost and found</span> objetos perdidos</li>
+</ul>
+
+<h3>Preposiciones con lugares: in, at, on</h3>
+<p>Las respuestas de esta parte siempre traen una preposición. Conocerlas te ayuda a leer más rápido:</p>
+<div class="ex"><span class="en">in a library / in a pool / in a shop</span><span>Dentro de un espacio cerrado o delimitado.</span></div>
+<div class="ex"><span class="en">at a zoo / at the airport / at a bus stop</span><span>Un punto o lugar donde ocurre una actividad.</span></div>
+<div class="ex"><span class="en">on a field / on a plane / on the road</span><span>Sobre una superficie o en un transporte público grande.</span></div>
+
+<div class="tip"><b>Estrategia TyT</b>Busca la <b>palabra clave</b> del aviso y pregúntate "¿quién lo necesita leer?". En el cuadernillo: <span class="en">"3 x 2. Buy two English videos and take three"</span> habla de <i>comprar</i>, así que va en una <b>bookstore</b> (en una biblioteca no se compra). <span class="en">"Basketball lessons… $10 session"</span> va en un <b>sports center</b>.</div>
+<div class="warn"><b>Trampa frecuente</b>Una opción puede tener relación con el tema pero no con la acción. <span class="en">"Today, open for swimming and fishing"</span>: en una piscina se nada, pero no se pesca. La respuesta es <b>at a lake</b>.</div>
+`,
+qs:[
+{sign:"Please return books before Friday", o:["in a supermarket","in a library","at a gym"], a:1, e:"<i>Return books</i> (devolver libros) indica préstamo, así que el aviso está <b>in a library</b>."},
+{sign:"Keep your seatbelt fastened", o:["on a plane","in a restaurant","at a museum"], a:0, e:"<i>Seatbelt</i> = cinturón de seguridad. Se usa en vehículos: <b>on a plane</b>. Recuerda: <i>on</i> con aviones, buses y trenes."},
+{sign:"Platform 3: trains to Medellín", o:["at a bus stop","at an airport","at a train station"], a:2, e:"<i>Platform</i> (andén) y <i>trains</i> indican <b>at a train station</b>."},
+{sign:"Do not feed the animals", o:["in a bank","at a zoo","at a school"], a:1, e:"<i>Feed the animals</i> = alimentar a los animales. El lugar lógico es <b>at a zoo</b>."},
+{sign:"Please switch off your phone during the film", o:["in a cinema","in a shoe shop","at a park"], a:0, e:"<i>Switch off</i> = apagar; <i>film</i> = película. El aviso está <b>in a cinema</b>."},
+{sign:"Check-in closes 40 minutes before departure", o:["in a hospital","at a supermarket","at an airport"], a:2, e:"<i>Check-in</i> y <i>departure</i> (salida de un vuelo) son vocabulario de aeropuerto: <b>at an airport</b>."},
+{sign:"Helmets must be worn beyond this point", o:["in a library","at a construction site","at a beach"], a:1, e:"<i>Helmets</i> = cascos, y está en voz pasiva: <i>must be worn</i> (deben usarse). Es un aviso de seguridad <b>at a construction site</b> (obra de construcción)."},
+{sign:"Fresh bread every morning from 6 a.m.", o:["in a bakery","in a bookstore","at a pharmacy"], a:0, e:"<i>Fresh bread</i> = pan fresco: <b>in a bakery</b>."},
+{q:"Which sentence means the same as the notice \"NO SMOKING\"?", o:["You should smoke here.","You can smoke here.","You must not smoke here."], a:2, e:"<i>No + verbo-ing</i> expresa prohibición, igual que <b>must not</b>. <i>Should</i> es consejo y <i>can</i> es permiso."},
+{q:"Complete: We saw the notice ___ the train station.", o:["of","at","to"], a:1, e:"Con estaciones, aeropuertos y paradas usamos <b>at</b>: <i>at the train station</i>."}
+]},
+
+{
+id:3, tag:"Parte 3", title:"Conversaciones cortas",
+desc:"Elige la respuesta más natural: agradecer, disculparse, ofrecer, invitar y responder preguntas.",
+ask:"Choose the best answer to complete the conversation.",
+theory:`
+<h3>¿Qué evalúa esta parte?</h3>
+<p>En la <b>Parte 3</b> ves una frase dicha por una persona y debes escoger la respuesta más adecuada. Aquí no basta con entender las palabras: evalúa si conoces las <b>funciones comunicativas</b>, es decir, lo que la gente dice normalmente en cada situación.</p>
+<div class="note"><b>Sobre este tipo de pregunta</b>El cuadernillo que trabajamos muestra ejemplos de las partes 1, 2, 5 y 7. Esta lección sigue el formato general de conversaciones cortas que usa el módulo de inglés del ICFES.</div>
+
+<h3>Expresiones que debes dominar</h3>
+<div class="scroll-x"><table>
+<tr><th>Situación</th><th>Frase</th><th>Respuestas naturales</th></tr>
+<tr><td>Agradecer</td><td class="en">Thank you (for…).</td><td class="en">You're welcome. / No problem. / Don't mention it.</td></tr>
+<tr><td>Disculparse</td><td class="en">I'm sorry (I'm late).</td><td class="en">Don't worry. / That's OK. / Never mind.</td></tr>
+<tr><td>Ofrecer</td><td class="en">Would you like some…?</td><td class="en">Yes, please. / No, thank you.</td></tr>
+<tr><td>Pedir un favor</td><td class="en">Can / Could you…?</td><td class="en">Sure. / Of course. / No problem.</td></tr>
+<tr><td>Pedir permiso</td><td class="en">Do you mind if I…?</td><td class="en">No, not at all. / Go ahead.</td></tr>
+<tr><td>Sugerir o invitar</td><td class="en">Let's… / Shall we…? / Why don't we…?</td><td class="en">Good idea! / Sounds great.</td></tr>
+<tr><td>Buenas noticias</td><td class="en">I passed my exam!</td><td class="en">Congratulations! / Well done!</td></tr>
+<tr><td>Antes de un reto</td><td class="en">I have an interview tomorrow.</td><td class="en">Good luck!</td></tr>
+</table></div>
+
+<h3>Preguntas con palabra interrogativa</h3>
+<p>La respuesta debe coincidir con lo que se pregunta:</p>
+<ul>
+<li><span class="en">How often…?</span> (frecuencia) → <span class="en">twice a week, every day</span></li>
+<li><span class="en">How long…?</span> (duración) → <span class="en">for two hours, for three years</span></li>
+<li><span class="en">What does he look like?</span> (aspecto físico) → <span class="en">He's tall with dark hair.</span></li>
+<li><span class="en">What is he like?</span> (personalidad) → <span class="en">He's friendly.</span></li>
+<li><span class="en">How is he?</span> (estado) → <span class="en">He's fine, thanks.</span></li>
+</ul>
+
+<h3>Respuestas cortas con auxiliar</h3>
+<p>El auxiliar de la respuesta debe ser el mismo de la pregunta y en el mismo tiempo verbal:</p>
+<div class="ex"><span class="en">Do you like pizza? – Yes, I do.</span><span>Presente simple → do</span></div>
+<div class="ex"><span class="en">Did you enjoy the party? – Yes, I did. / Yes, it was great.</span><span>Pasado → did / was</span></div>
+<div class="ex"><span class="en">Have you ever been to Cali? – No, I haven't. / No, never.</span><span>Presente perfecto → have</span></div>
+
+<div class="warn"><b>Trampa frecuente</b>Las opciones incorrectas suelen <b>repetir palabras</b> de la pregunta para confundirte. Con <span class="en">"Do you mind if I open the window?"</span>, responder <span class="en">"Yes"</span> significa que <i>sí te molesta</i>. La respuesta amable es <span class="en">"No, not at all."</span></div>
+`,
+qs:[
+{say:"Thank you for your help.", o:["Yes, I help you.","You're welcome.","I'm fine, thanks."], a:1, e:"Ante un agradecimiento se responde <b>You're welcome</b> (de nada). <i>I'm fine, thanks</i> responde a <i>How are you?</i>"},
+{say:"Would you like some coffee?", o:["Yes, please.","I like coffee.","Yes, I'd like."], a:0, e:"Ante un ofrecimiento: <b>Yes, please</b> o <i>No, thank you</i>. <i>I like coffee</i> expresa un gusto general, no acepta la oferta, y <i>I'd like</i> quedaría incompleto sin objeto."},
+{say:"I'm sorry I'm late.", o:["You're welcome.","Me too.","Don't worry."], a:2, e:"Ante una disculpa: <b>Don't worry</b>, <i>That's OK</i> o <i>Never mind</i>. <i>You're welcome</i> se usa solo para responder a <i>Thank you</i>."},
+{say:"Did you enjoy the party?", o:["Yes, I do.","Yes, it was great.","No, I don't enjoy."], a:1, e:"La pregunta está en pasado (<i>did</i>), así que la respuesta también: <b>Yes, it was great</b>. <i>Yes, I do</i> está en presente."},
+{say:"Can you help me carry this box?", o:["Sure, no problem.","Yes, I can't.","It's a heavy box."], a:0, e:"Para aceptar un favor: <b>Sure, no problem</b>. <i>Yes, I can't</i> es contradictorio."},
+{say:"How often do you go to the gym?", o:["For two hours.","By bus.","Twice a week."], a:2, e:"<i>How often</i> pregunta por frecuencia: <b>twice a week</b> (dos veces por semana). <i>For two hours</i> responde a <i>How long</i> y <i>By bus</i> a <i>How</i>."},
+{say:"Let's go to the cinema tonight.", o:["Good idea! What time?","Yes, I went.","It's tonight."], a:0, e:"<i>Let's…</i> es una sugerencia. Se acepta con <b>Good idea!</b>; <i>Yes, I went</i> está en pasado y no tiene sentido."},
+{say:"What does your brother look like?", o:["He likes football.","He's tall with dark hair.","He's fine, thanks."], a:1, e:"<i>What does he look like?</i> pregunta por el aspecto físico: <b>He's tall with dark hair</b>. No confundas <i>look like</i> con <i>like</i> (gustar)."},
+{say:"Have you ever been to Cartagena?", o:["Yes, I go.","No, I haven't go.","No, never."], a:2, e:"<i>Have you ever…?</i> pregunta por experiencias: <b>No, never</b> o <i>No, I haven't</i>. <i>I haven't go</i> es incorrecto (sería <i>gone/been</i>)."},
+{say:"Excuse me, is this seat free?", o:["No, it's expensive.","Yes, go ahead.","I'm free today."], a:1, e:"Aquí <i>free</i> significa <i>libre, desocupado</i>. La respuesta natural es <b>Yes, go ahead</b> (sí, siga). Las otras opciones usan otro sentido de <i>free</i> (gratis, disponible)."}
+]},
+
+{
+id:4, tag:"Partes 4 y 7", title:"Tiempos verbales",
+desc:"Presente, pasado, presente perfecto y pasado perfecto con sus palabras señal: already, yet, since, for.",
+ask:"Choose the correct option to complete the sentence.",
+theory:`
+<h3>¿Por qué es importante?</h3>
+<p>En los textos para completar (Partes 4 y 7) muchas preguntas dependen del <b>tiempo verbal</b>. La clave casi siempre está en una <b>palabra señal</b> dentro de la oración: <span class="en">yesterday, since, already, every day, now</span>…</p>
+
+<h3>Los tiempos que más aparecen</h3>
+<div class="scroll-x"><table>
+<tr><th>Tiempo</th><th>Forma</th><th>Uso</th><th>Palabras señal</th></tr>
+<tr><td>Presente simple</td><td class="en">I work / she works</td><td>Hábitos y verdades</td><td class="en">every day, always, usually, on Mondays</td></tr>
+<tr><td>Presente continuo</td><td class="en">I am / she is working</td><td>Acción en este momento</td><td class="en">now, right now, Look!, at the moment</td></tr>
+<tr><td>Pasado simple</td><td class="en">I worked / I went</td><td>Acción terminada en un momento definido</td><td class="en">yesterday, last year, ago, in 2004</td></tr>
+<tr><td>Presente perfecto</td><td class="en">I have / she has worked</td><td>Experiencias o acciones que llegan hasta hoy</td><td class="en">already, yet, never, ever, just, since, for</td></tr>
+<tr><td>Pasado perfecto</td><td class="en">I had worked</td><td>Acción anterior a otra acción pasada</td><td class="en">already, before, when…</td></tr>
+<tr><td>Futuro</td><td class="en">I will work / I'm going to work</td><td>Predicciones y planes</td><td class="en">tomorrow, next week, I think…</td></tr>
+</table></div>
+
+<h3>Already, yet, never</h3>
+<div class="ex"><span class="en">I have already finished.</span><span><b>already</b> = ya (oraciones afirmativas, antes del participio)</span></div>
+<div class="ex"><span class="en">Have you finished yet? / I haven't finished yet.</span><span><b>yet</b> = ya / todavía (preguntas y negativas, al final)</span></div>
+<div class="ex"><span class="en">I have never eaten sushi.</span><span><b>never</b> = nunca (experiencia)</span></div>
+
+<h3>Since y for</h3>
+<p><b>since</b> indica el <i>punto de inicio</i> (<span class="en">since 2015, since Monday, since I was a child</span>). <b>for</b> indica la <i>duración</i> (<span class="en">for ten years, for two hours</span>). <span class="en">ago</span> va con pasado simple: <span class="en">I moved here five years ago.</span></p>
+
+<div class="note"><b>Ejemplo del cuadernillo</b><span class="en">"David Gorske, 57, has eaten his 25,000th Big Mac. It's been 39 years since he first ate a burger. At the age of 19 he had <b>already</b> eaten his first 1,000 burgers."</span> Aquí aparecen el presente perfecto (<i>has eaten</i>), <i>since</i> y el pasado perfecto con <i>already</i> (<i>had already eaten</i>).</div>
+
+<div class="tip"><b>Estrategia TyT</b>Antes de mirar las opciones, busca en la oración la palabra señal y el sujeto. Si el sujeto es <i>he/she/it</i> y es presente simple, el verbo lleva <b>-s</b>. Si ves una fecha pasada (<i>in 1663, last year</i>), usa pasado simple, no presente perfecto.</div>
+
+<h3>Verbos irregulares frecuentes</h3>
+<div class="scroll-x"><table>
+<tr><th>Base</th><th>Pasado</th><th>Participio</th><th>Base</th><th>Pasado</th><th>Participio</th></tr>
+<tr><td class="en">be</td><td>was/were</td><td>been</td><td class="en">eat</td><td>ate</td><td>eaten</td></tr>
+<tr><td class="en">go</td><td>went</td><td>gone</td><td class="en">write</td><td>wrote</td><td>written</td></tr>
+<tr><td class="en">buy</td><td>bought</td><td>bought</td><td class="en">think</td><td>thought</td><td>thought</td></tr>
+<tr><td class="en">get</td><td>got</td><td>got/gotten</td><td class="en">lose</td><td>lost</td><td>lost</td></tr>
+<tr><td class="en">take</td><td>took</td><td>taken</td><td class="en">begin</td><td>began</td><td>begun</td></tr>
+</table></div>
+`,
+qs:[
+{q:"She ___ to work by bus every day.", o:["is going","goes","went"], a:1, e:"<i>Every day</i> indica hábito → presente simple. Con <i>she</i> el verbo lleva -s: <b>goes</b>."},
+{q:"Look! The children ___ in the park.", o:["are playing","play","played"], a:0, e:"<i>Look!</i> indica que la acción ocurre ahora → presente continuo: <b>are playing</b>."},
+{q:"We ___ Medellín last year.", o:["have visited","visit","visited"], a:2, e:"<i>Last year</i> es un momento terminado y definido → pasado simple: <b>visited</b>. El presente perfecto no se usa con fechas pasadas."},
+{q:"I have ___ finished my homework, so I can go out now.", o:["yet","already","ago"], a:1, e:"En oraciones afirmativas con presente perfecto, <i>ya</i> se dice <b>already</b>. <i>Yet</i> va en preguntas y negativas."},
+{q:"Have you finished the report ___?", o:["yet","already","since"], a:0, e:"En preguntas con presente perfecto, <i>ya</i> se expresa con <b>yet</b> al final de la oración."},
+{q:"They have lived in Pereira ___ 2015.", o:["for","ago","since"], a:2, e:"2015 es el punto de inicio → <b>since</b>. <i>For</i> se usa con duraciones (for ten years)."},
+{q:"He has worked here ___ ten years.", o:["for","since","during"], a:0, e:"<i>Ten years</i> es una duración → <b>for</b>."},
+{q:"When I arrived at the cinema, the film ___ already started.", o:["has","had","have"], a:1, e:"La película empezó <i>antes</i> de que yo llegara (acción pasada anterior a otra) → pasado perfecto: <b>had</b> already started."},
+{q:"Take an umbrella. I think it ___ rain later.", o:["is","did","will"], a:2, e:"<i>I think</i> + predicción sobre el futuro → <b>will</b> + verbo base."},
+{q:"Isaac Newton ___ at Cambridge University in the 17th century.", o:["worked","works","has worked"], a:0, e:"Se trata de un hecho terminado en un momento pasado (siglo XVII) → pasado simple: <b>worked</b>."}
+]},
+
+{
+id:5, tag:"Partes 4 y 7", title:"Pronombres, posesivos y relativos",
+desc:"his, her, their, its, me, hers… y los pronombres relativos who, which, where, when, whose.",
+ask:"Choose the correct option to complete the sentence.",
+theory:`
+<h3>Pronombres y posesivos</h3>
+<div class="scroll-x"><table>
+<tr><th>Sujeto</th><th>Objeto</th><th>Adjetivo posesivo</th><th>Pronombre posesivo</th></tr>
+<tr><td class="en">I</td><td class="en">me</td><td class="en">my</td><td class="en">mine</td></tr>
+<tr><td class="en">you</td><td class="en">you</td><td class="en">your</td><td class="en">yours</td></tr>
+<tr><td class="en">he</td><td class="en">him</td><td class="en">his</td><td class="en">his</td></tr>
+<tr><td class="en">she</td><td class="en">her</td><td class="en">her</td><td class="en">hers</td></tr>
+<tr><td class="en">it</td><td class="en">it</td><td class="en">its</td><td>—</td></tr>
+<tr><td class="en">we</td><td class="en">us</td><td class="en">our</td><td class="en">ours</td></tr>
+<tr><td class="en">they</td><td class="en">them</td><td class="en">their</td><td class="en">theirs</td></tr>
+</table></div>
+<ul>
+<li>El <b>sujeto</b> va antes del verbo: <span class="en">She works here.</span></li>
+<li>El <b>objeto</b> va después del verbo o de una preposición: <span class="en">Give me the book. I talk with them.</span></li>
+<li>El <b>adjetivo posesivo</b> va antes de un sustantivo: <span class="en">my car, their house</span>.</li>
+<li>El <b>pronombre posesivo</b> reemplaza al sustantivo: <span class="en">This car is mine.</span></li>
+</ul>
+
+<div class="warn"><b>El error más común de los hispanohablantes</b>En español "su" sirve para todo. En inglés el posesivo depende de <b>quién es el dueño</b>, no de la cosa poseída. <span class="en">David has eaten <b>his</b> 25,000th Big Mac</span> (David es hombre → <i>his</i>). <span class="en">María loves <b>her</b> job</span> (María es mujer → <i>her</i>).</div>
+<div class="ex"><span class="en">its / it's</span><span><b>its</b> = su (de una cosa o animal). <b>it's</b> = it is. <span class="en">The company changed its logo. It's new.</span></span></div>
+<div class="ex"><span class="en">their / there / they're</span><span><b>their</b> = su (de ellos); <b>there</b> = allí / hay; <b>they're</b> = they are.</span></div>
+
+<h3>Pronombres relativos</h3>
+<p>Unen dos ideas y se refieren a algo que ya se mencionó:</p>
+<div class="scroll-x"><table>
+<tr><th>Relativo</th><th>Se refiere a</th><th>Ejemplo</th></tr>
+<tr><td class="en">who</td><td>Personas</td><td class="en">The woman who lives next door is a doctor.</td></tr>
+<tr><td class="en">which</td><td>Cosas, animales, organizaciones</td><td class="en">The film "Super Size Me", which looks at…</td></tr>
+<tr><td class="en">that</td><td>Personas o cosas (sin coma)</td><td class="en">The book that I bought is great.</td></tr>
+<tr><td class="en">where</td><td>Lugares</td><td class="en">This is the café where we met.</td></tr>
+<tr><td class="en">when</td><td>Momentos</td><td class="en">I remember the day when I graduated.</td></tr>
+<tr><td class="en">whose</td><td>Posesión (cuyo)</td><td class="en">He's the man whose car was stolen.</td></tr>
+</table></div>
+
+<div class="tip"><b>Estrategia TyT</b>Mira la palabra que está <b>justo antes</b> del espacio. ¿Es una persona? → <i>who</i>. ¿Una cosa? → <i>which</i>. ¿Un lugar donde ocurre algo? → <i>where</i>. En el cuadernillo, <span class="en">"…Super Size Me", ___ looks at the effects…</span> se refiere a una película (cosa) y va después de coma, así que la respuesta es <b>which</b>.</div>
+`,
+qs:[
+{q:"María loves ___ new job.", o:["his","her","their"], a:1, e:"El dueño es María (mujer, singular) → <b>her</b>."},
+{q:"The students finished ___ project on time.", o:["there","they're","their"], a:2, e:"El dueño son <i>the students</i> (ellos) → <b>their</b>. <i>There</i> = allí; <i>they're</i> = they are."},
+{q:"The company changed ___ logo last year.", o:["it's","its","his"], a:1, e:"Para una cosa u organización se usa <b>its</b> (sin apóstrofo). <i>It's</i> significa <i>it is</i>."},
+{q:"This book isn't mine. It's ___.", o:["her","she","hers"], a:2, e:"Al final de la oración, sin sustantivo después, se usa el pronombre posesivo <b>hers</b> (de ella)."},
+{q:"Please give ___ the keys.", o:["me","I","my"], a:0, e:"Después del verbo <i>give</i> se necesita un pronombre objeto: <b>me</b>."},
+{q:"The woman ___ lives next door is a doctor.", o:["which","who","where"], a:1, e:"<i>The woman</i> es una persona → <b>who</b>."},
+{q:"This is the restaurant ___ we had dinner last night.", o:["where","which","who"], a:0, e:"Se refiere a un lugar donde ocurrió una acción → <b>where</b>."},
+{q:"I read a book ___ was written by García Márquez.", o:["who","whose","which"], a:2, e:"<i>A book</i> es una cosa → <b>which</b>."},
+{q:"He is the man ___ car was stolen.", o:["who","whose","which"], a:1, e:"Expresa posesión (el hombre <i>cuyo</i> carro fue robado) → <b>whose</b>."},
+{q:"I will never forget the day ___ we met.", o:["when","where","who"], a:0, e:"<i>The day</i> es un momento en el tiempo → <b>when</b>."}
+]},
+
+{
+id:6, tag:"Partes 4 y 7", title:"Comparativos, cuantificadores y preguntas con How",
+desc:"bigger, the best, as…as, much, many y las preguntas how much, how old, how far, how often.",
+ask:"Choose the correct option to complete the sentence.",
+theory:`
+<h3>Comparativos y superlativos</h3>
+<div class="scroll-x"><table>
+<tr><th>Tipo de adjetivo</th><th>Comparativo</th><th>Superlativo</th></tr>
+<tr><td>Corto (1 sílaba): <span class="en">cold, big</span></td><td class="en">colder than, bigger than</td><td class="en">the coldest, the biggest</td></tr>
+<tr><td>Termina en -y: <span class="en">easy, happy</span></td><td class="en">easier than</td><td class="en">the easiest</td></tr>
+<tr><td>Largo: <span class="en">beautiful, expensive</span></td><td class="en">more beautiful than</td><td class="en">the most beautiful</td></tr>
+<tr><td>Irregulares</td><td class="en">good → better · bad → worse · far → farther/further</td><td class="en">the best · the worst · the farthest</td></tr>
+</table></div>
+<div class="ex"><span class="en">My sister is as tall as my brother.</span><span><b>as … as</b> = tan … como (igualdad)</span></div>
+<div class="warn"><b>Errores típicos</b>No digas <span class="en">more big</span> ni <span class="en">most high</span>. Los adjetivos cortos usan <b>-er / -est</b>. El superlativo siempre lleva <b>the</b>: <span class="en">the highest mountain</span>.</div>
+
+<h3>Cuantificadores: much, many, few, little</h3>
+<div class="scroll-x"><table>
+<tr><th>Sustantivos contables (se pueden contar)</th><th>Sustantivos incontables</th></tr>
+<tr><td><span class="en">many</span> books · <span class="en">a few</span> students · <span class="en">How many…?</span></td><td><span class="en">much</span> milk · <span class="en">a little</span> sugar · <span class="en">How much…?</span></td></tr>
+<tr><td colspan="2"><span class="en">a lot of</span> sirve para ambos: <span class="en">a lot of friends, a lot of water</span>. <span class="en">some</span> en afirmativas y ofrecimientos; <span class="en">any</span> en preguntas y negativas.</td></tr>
+</table></div>
+
+<h3>Preguntas con How + palabra</h3>
+<div class="scroll-x"><table>
+<tr><th>Pregunta</th><th>Pregunta por…</th><th>Respuesta típica</th></tr>
+<tr><td class="en">How much…?</td><td>Cantidad (incontable) o precio</td><td class="en">A little. / It's $10.</td></tr>
+<tr><td class="en">How many…?</td><td>Cantidad (contable)</td><td class="en">Thirty students.</td></tr>
+<tr><td class="en">How old…?</td><td>Edad</td><td class="en">I'm 19.</td></tr>
+<tr><td class="en">How far…?</td><td>Distancia</td><td class="en">About 10 kilometers.</td></tr>
+<tr><td class="en">How often…?</td><td>Frecuencia</td><td class="en">Every Sunday.</td></tr>
+<tr><td class="en">How long…?</td><td>Duración</td><td class="en">For two hours.</td></tr>
+</table></div>
+
+<div class="note"><b>Ejemplo del cuadernillo</b><span class="en">He thought: "How ___ will I be before I reach 10,000?"</span> La respuesta es <b>old</b>, porque él se pregunta qué <i>edad</i> tendrá. <i>How far</i> (distancia), <i>how much</i> (cantidad) y <i>how often</i> (frecuencia) no tienen sentido con <i>will I be</i>.</div>
+<div class="tip"><b>Estrategia TyT</b>Busca <b>than</b> en la oración: si aparece, necesitas un comparativo. Si ves <b>the</b> antes del espacio o <i>in the world / ever</i> después, necesitas un superlativo.</div>
+`,
+qs:[
+{q:"Bogotá is ___ than Pereira.", o:["biggest","bigger","more big"], a:1, e:"Aparece <i>than</i> → comparativo. <i>Big</i> es corto: <b>bigger</b> (se duplica la g)."},
+{q:"This is the ___ movie I have ever seen.", o:["best","better","good"], a:0, e:"<i>The … ever</i> indica superlativo. <i>Good</i> es irregular: good → better → <b>the best</b>."},
+{q:"My sister is ___ tall ___ my brother; they are the same height.", o:["more / than","as / as","so / than"], a:1, e:"<i>The same height</i> = misma estatura → igualdad: <b>as tall as</b>."},
+{q:"How ___ sugar do you want in your coffee?", o:["many","often","much"], a:2, e:"<i>Sugar</i> es incontable → <b>How much</b>."},
+{q:"How ___ students are there in your class?", o:["many","much","long"], a:0, e:"<i>Students</i> se puede contar → <b>How many</b>."},
+{q:"How ___ is it from here to the airport? – About 10 kilometers.", o:["old","far","often"], a:1, e:"La respuesta es una distancia → <b>How far</b>."},
+{q:"How ___ do you visit your grandparents? – Every Sunday.", o:["many","far","often"], a:2, e:"<i>Every Sunday</i> es frecuencia → <b>How often</b>."},
+{q:"There isn't ___ milk in the fridge. We need to buy some.", o:["much","many","few"], a:0, e:"<i>Milk</i> es incontable y la oración es negativa → <b>much</b>."},
+{q:"Today is ___ than yesterday. I need a jacket.", o:["coldest","more cold","colder"], a:2, e:"Hay <i>than</i> → comparativo de un adjetivo corto: <b>colder</b>."},
+{q:"Mount Everest is the ___ mountain in the world.", o:["highest","higher","most high"], a:0, e:"<i>The … in the world</i> → superlativo de adjetivo corto: <b>the highest</b>."}
+]},
+
+{
+id:7, tag:"Partes 4 y 7", title:"Preposiciones y conectores",
+desc:"in, on, at para tiempo y lugar; conectores and, but, so, because, although, then.",
+ask:"Choose the correct option to complete the sentence.",
+theory:`
+<h3>Preposiciones de tiempo</h3>
+<div class="scroll-x"><table>
+<tr><th>Preposición</th><th>Se usa con</th><th>Ejemplos</th></tr>
+<tr><td class="en">at</td><td>Horas exactas y momentos puntuales</td><td class="en">at 5 p.m., at night, at the weekend</td></tr>
+<tr><td class="en">on</td><td>Días y fechas</td><td class="en">on Monday, on Wednesdays, on May 3rd, on my birthday</td></tr>
+<tr><td class="en">in</td><td>Meses, años, estaciones, partes del día</td><td class="en">in June, in 2004, in summer, in the morning</td></tr>
+</table></div>
+<p>Truco para recordar: de lo más específico a lo más general → <b>AT</b> (hora) → <b>ON</b> (día) → <b>IN</b> (mes, año).</p>
+
+<h3>Preposiciones de lugar</h3>
+<div class="ex"><span class="en">in the box / in Pereira / in the kitchen</span><span><b>in</b>: dentro de un espacio, ciudad o país.</span></div>
+<div class="ex"><span class="en">on the table / on the wall / on the second floor</span><span><b>on</b>: sobre una superficie.</span></div>
+<div class="ex"><span class="en">at the door / at the bus stop / at school</span><span><b>at</b>: un punto específico.</span></div>
+
+<h3>Conectores</h3>
+<p>Los conectores muestran la <b>relación lógica</b> entre dos ideas. Para escoger bien, lee las dos partes de la oración y pregúntate cómo se relacionan.</p>
+<div class="scroll-x"><table>
+<tr><th>Conector</th><th>Relación</th><th>Ejemplo</th></tr>
+<tr><td class="en">and</td><td>Suma (y)</td><td class="en">He studied physics and mathematics.</td></tr>
+<tr><td class="en">but</td><td>Contraste (pero)</td><td class="en">The book was popular, but it was difficult.</td></tr>
+<tr><td class="en">because</td><td>Causa (porque)</td><td class="en">He didn't come because he was sick.</td></tr>
+<tr><td class="en">so</td><td>Consecuencia (así que)</td><td class="en">He had dreams, so he began to work harder.</td></tr>
+<tr><td class="en">although</td><td>Concesión (aunque)</td><td class="en">Although it was late, they continued.</td></tr>
+<tr><td class="en">however</td><td>Contraste formal (sin embargo)</td><td class="en">It was hard. However, she didn't stop.</td></tr>
+<tr><td class="en">then / after that / finally</td><td>Secuencia</td><td class="en">First… Then… Finally…</td></tr>
+</table></div>
+
+<div class="tip"><b>Truco: because vs. so</b><b>because</b> introduce la <i>causa</i>; <b>so</b> introduce el <i>resultado</i>. <span class="en">I was tired (causa), <b>so</b> I slept (resultado).</span> <span class="en">I slept (resultado) <b>because</b> I was tired (causa).</span></div>
+<div class="note"><b>En el texto de Hawking</b><span class="en">"Later, his problem got worse <b>but</b> he wanted to finish his studies."</span> (contraste) · <span class="en">"He had dreams about giving something good to the world, <b>so</b> he began to improve his work."</span> (consecuencia).</div>
+`,
+qs:[
+{q:"The class starts ___ 7 o'clock.", o:["on","at","in"], a:1, e:"Con horas exactas se usa <b>at</b>: <i>at 7 o'clock</i>."},
+{q:"My birthday is ___ June.", o:["in","on","at"], a:0, e:"Con meses se usa <b>in</b>: <i>in June</i>. Si fuera una fecha completa sería <i>on June 5th</i>."},
+{q:"We have English class ___ Mondays and Fridays.", o:["in","at","on"], a:2, e:"Con días de la semana se usa <b>on</b>."},
+{q:"Stephen Hawking was born ___ 1942.", o:["on","in","at"], a:1, e:"Con años se usa <b>in</b>: <i>in 1942</i>."},
+{q:"I was very tired, ___ I went to bed early.", o:["so","but","because"], a:0, e:"Acostarse temprano es la <i>consecuencia</i> de estar cansado → <b>so</b>."},
+{q:"She didn't go to school ___ she was sick.", o:["so","but","because"], a:2, e:"Estar enferma es la <i>causa</i> → <b>because</b>."},
+{q:"The book was popular, ___ many people did not finish it.", o:["because","but","so"], a:1, e:"Hay un <i>contraste</i> (popular / no lo terminaron) → <b>but</b>."},
+{q:"___ it was raining, they played soccer.", o:["Although","Because","So"], a:0, e:"Jugaron <i>a pesar de</i> la lluvia → concesión: <b>Although</b> (aunque)."},
+{q:"Your keys are ___ the table, next to the lamp.", o:["at","in","on"], a:2, e:"Sobre una superficie se usa <b>on</b>: <i>on the table</i>."},
+{q:"First, mix the eggs and the sugar. ___, add the flour.", o:["Because","Then","Although"], a:1, e:"Es una secuencia de pasos → <b>Then</b> (luego)."}
+]},
+
+{
+id:8, tag:"Partes 5 y 6", title:"Comprensión de lectura",
+desc:"Paráfrasis, sinónimos, inferencia e idea principal con textos cortos al estilo TyT.",
+ask:"Read the text and choose the correct answer.",
+passages:{
+A:{title:"A new life in the mountains", body:["Laura Gómez, 28, worked as an accountant in Bogotá for five years. She earned a good salary, but she felt stressed and rarely saw her family. In 2021, she decided to move to her grandparents' farm near Santa Rosa de Cabal.","At first, it was hard: she knew nothing about growing coffee, and the first harvest was very small. However, her grandfather taught her everything he knew, and she took online courses about organic farming.","Today, Laura sells her coffee to three cafés in Pereira and receives tourists who want to learn about the coffee process. \"I earn less money than before,\" she says, \"but I am much happier. Now I have time for the things that really matter.\""]},
+B:{title:"An email from Sara", body:["Hi Tom,","Thanks for your message. I'm sorry I couldn't answer before, but I was on a trip to the Amazon with my university. It was amazing! We slept in hammocks and saw pink dolphins in the river. The only problem was the mosquitoes – I forgot to take repellent!","Next month I'm starting a new part-time job at a language school, so I'll be quite busy. But are you free on Saturday the 12th? We could go hiking in Ucumarí Park. Let me know!","Sara"]}
+},
+theory:`
+<h3>¿Qué evalúan las Partes 5 y 6?</h3>
+<p>En la <b>Parte 5</b> lees un texto corto (como <span class="en">"What a story!"</span> sobre Stephen Hawking) y respondes preguntas de información concreta. La <b>Parte 6</b> usa textos un poco más largos y pregunta también por la <b>idea principal</b>, la <b>opinión del autor</b> o lo que se puede <b>inferir</b>.</p>
+
+<h3>La clave: la paráfrasis</h3>
+<p>Las preguntas casi nunca repiten las palabras exactas del texto: las dicen <b>de otra manera</b>. Mira cómo funciona con el cuadernillo:</p>
+<div class="scroll-x"><table>
+<tr><th>Lo que dice el texto</th><th>Cómo lo dice la respuesta</th></tr>
+<tr><td class="en">"He thought he was going to live only a few months"</td><td class="en">He believed he was going to <b>die soon</b>.</td></tr>
+<tr><td class="en">"In 2005, he wrote a simple version"</td><td class="en">His second book was <b>easier to read</b>.</td></tr>
+<tr><td class="en">"In 1985… lost his ability to speak"</td><td class="en">He started <b>needing help to communicate</b> in 1985.</td></tr>
+<tr><td class="en">"choose words from a computer screen"</td><td class="en">He could talk using <b>a machine</b>.</td></tr>
+<tr><td class="en">"his wife and children"</td><td class="en">his <b>family</b></td></tr>
+</table></div>
+
+<h3>Sinónimos que aparecen mucho</h3>
+<p><span class="en">begin = start</span> · <span class="en">hard = difficult</span> · <span class="en">big = large</span> · <span class="en">buy = purchase</span> · <span class="en">help = support</span> · <span class="en">amazing = wonderful</span> · <span class="en">job = work</span> · <span class="en">travel = go on a trip</span> · <span class="en">insects ⊃ mosquitoes</span> · <span class="en">science ⊃ biology</span></p>
+
+<h3>Tipos de preguntas</h3>
+<ul>
+<li><b>Información explícita:</b> la respuesta está en el texto, pero con otras palabras.</li>
+<li><b>Vocabulario en contexto:</b> <span class="en">"The word X is closest in meaning to…"</span></li>
+<li><b>Inferencia:</b> la respuesta no está escrita, pero se deduce (por ejemplo, un <i>accountant</i> trabaja en una oficina).</li>
+<li><b>Propósito o idea principal:</b> ¿para qué se escribió el texto?</li>
+</ul>
+
+<div class="tip"><b>Estrategia TyT</b>1) Lee primero las preguntas. 2) Las preguntas siguen el <b>orden del texto</b>. 3) Ubica el fragmento y compáralo con cada opción. 4) Desconfía de las opciones que copian palabras literales del texto: muchas veces son la trampa.</div>
+<div class="warn"><b>Trampa frecuente</b>En el cuadernillo, la pregunta 12 dice <span class="en">"Before he died, he could talk using…"</span>. La opción <span class="en">"some letters"</span> es tentadora porque el texto menciona letras, pero eso fue <i>al principio</i>. La forma de comunicarse que mantuvo fue <b>a machine</b> (la pantalla del computador).</div>
+`,
+qs:[
+{p:"A", q:"Before 2021, Laura worked", o:["on a farm.","in an office in a city.","in a café."], a:1, e:"Era <i>accountant in Bogotá</i> (contadora en Bogotá): se infiere que trabajaba <b>en una oficina en una ciudad</b>. La finca llegó después."},
+{p:"A", q:"Laura left her job in Bogotá because she", o:["felt stressed.","lost her job.","wanted a better salary."], a:0, e:"El texto dice <i>she felt stressed and rarely saw her family</i>. Su salario era bueno, así que no fue por dinero."},
+{p:"A", q:"Her first period on the farm was", o:["easy.","boring.","difficult."], a:2, e:"<i>At first, it was hard</i> → <b>difficult</b> es sinónimo de <i>hard</i>. Es una paráfrasis típica."},
+{p:"A", q:"Who taught Laura about growing coffee?", o:["Her grandfather.","Some tourists.","Her boss."], a:0, e:"<i>Her grandfather taught her everything he knew</i>. Los turistas visitan la finca para aprender, no le enseñan."},
+{p:"A", q:"What does Laura think about her new life?", o:["She earns more money now.","It is better, even with less money.","She wants to return to Bogotá."], a:1, e:"Dice <i>I earn less money… but I am much happier</i> → su vida es <b>mejor aunque gane menos</b>."},
+{p:"B", q:"Why didn't Sara answer Tom's message before?", o:["She was sick.","She was working.","She was on a trip."], a:2, e:"<i>I was on a trip to the Amazon with my university</i>. El trabajo nuevo empieza el mes próximo."},
+{p:"B", q:"What was the problem during the trip?", o:["The insects.","The food.","The hammocks."], a:0, e:"<i>The only problem was the mosquitoes</i>. Los mosquitos son <b>insects</b>: la respuesta usa una palabra más general."},
+{p:"B", q:"In the email, the word \"amazing\" is closest in meaning to", o:["strange.","wonderful.","terrible."], a:1, e:"<i>Amazing</i> = increíble, maravilloso. Su sinónimo más cercano es <b>wonderful</b>."},
+{p:"B", q:"Next month, Sara is going to", o:["start a new job.","finish university.","travel to the Amazon again."], a:0, e:"<i>Next month I'm starting a new part-time job</i> → <b>start a new job</b>."},
+{p:"B", q:"What is the main purpose of Sara's email?", o:["To complain about the trip.","To ask Tom for a job.","To reply to Tom and suggest a plan."], a:2, e:"Sara responde el mensaje de Tom y lo invita a caminar en el parque Ucumarí → <b>responder y proponer un plan</b>. La queja por los mosquitos es solo un detalle."}
+]},
+
+{
+id:9, tag:"Parte 7", title:"Vocabulario en contexto",
+desc:"Palabras que se confunden: say, tell, speak, talk; spend, buy, pay; make, do; borrow, lend.",
+ask:"Choose the correct word to complete the sentence.",
+theory:`
+<h3>¿Qué evalúa la Parte 7?</h3>
+<p>Lees un texto con espacios (como <span class="en">"Big Mac attack"</span>) y eliges entre cuatro palabras. Muchas veces las cuatro opciones <b>significan algo parecido</b> en español, pero solo una encaja por su <b>gramática</b> o por su <b>combinación</b> con las palabras vecinas (<i>collocations</i>).</p>
+
+<h3>Say, tell, speak, talk</h3>
+<div class="scroll-x"><table>
+<tr><th>Verbo</th><th>Cómo se usa</th><th>Ejemplo</th></tr>
+<tr><td class="en">say</td><td>Decir algo (sin persona directa). <span class="en">say (that)…</span></td><td class="en">Mr. Gorske says he can eat a burger in 16 bites.</td></tr>
+<tr><td class="en">tell</td><td>Decirle algo <b>a alguien</b>: tell + persona</td><td class="en">She told me the truth. Tell him to come.</td></tr>
+<tr><td class="en">speak</td><td>Hablar un idioma o de forma formal</td><td class="en">He speaks three languages.</td></tr>
+<tr><td class="en">talk</td><td>Conversar: talk to / with / about</td><td class="en">We talked about the exam.</td></tr>
+</table></div>
+
+<h3>Dinero y compras</h3>
+<div class="ex"><span class="en">spend money / time on something</span><span><b>spend</b> = gastar (dinero o tiempo)</span></div>
+<div class="ex"><span class="en">buy six burgers</span><span><b>buy</b> = comprar algo</span></div>
+<div class="ex"><span class="en">pay for the food / pay the bill</span><span><b>pay</b> = pagar</span></div>
+<div class="ex"><span class="en">borrow from / lend to</span><span><b>borrow</b> = pedir prestado; <b>lend</b> = prestar a otro</span></div>
+
+<h3>Make o do</h3>
+<div class="scroll-x"><table>
+<tr><th>make (crear, producir)</th><th>do (tareas, actividades)</th></tr>
+<tr><td class="en">make a cake, a mistake, a decision, a noise, friends, money, a plan</td><td class="en">do homework, exercise, the dishes, a job, your best, a course</td></tr>
+</table></div>
+
+<h3>Otras combinaciones del cuadernillo</h3>
+<ul>
+<li><span class="en">organize a party / celebration</span> → organizar una fiesta (no <i>compose</i> ni <i>conduct</i>).</li>
+<li><span class="en">continue to eat / continue eating</span> → seguir comiendo.</li>
+<li><span class="en">keep food in the fridge / freezer</span> → nevera / congelador; <span class="en">cupboard</span> = alacena; <span class="en">oven</span> = horno.</li>
+<li><span class="en">diet</span> = alimentación habitual (no solo "dieta para adelgazar") · <span class="en">snack</span> = refrigerio · <span class="en">supper</span> = cena ligera.</li>
+</ul>
+
+<div class="tip"><b>Estrategia TyT</b>Lee la oración completa, incluso lo que viene <b>después</b> del espacio. En el cuadernillo, <span class="en">"keeps them frozen in his ___"</span>: la palabra <i>frozen</i> (congelados) descarta <i>cupboard, oven</i> y <i>cabinet</i> → <b>fridge</b>. Y <span class="en">"Doctors do not recommend Mr. Gorske's ___"</span> habla de su forma habitual de comer → <b>diet</b>.</div>
+`,
+qs:[
+{q:"She ___ me the truth about the accident.", o:["said","told","spoke"], a:1, e:"Hay una persona justo después del espacio (<i>me</i>) → <b>told</b>. <i>Say</i> no lleva la persona directamente."},
+{q:"My grandmother ___ three languages.", o:["speaks","tells","says"], a:0, e:"Con idiomas se usa <b>speak</b>: <i>she speaks three languages</i>."},
+{q:"He ___ that he was very tired.", o:["told","talked","said"], a:2, e:"<i>___ that…</i> sin persona → <b>said</b>. Con <i>told</i> faltaría a quién se lo dijo (<i>told me that…</i>)."},
+{q:"I ___ a lot of money on clothes last month.", o:["spent","bought","paid"], a:0, e:"<i>Money on something</i> → <b>spend</b> (gastar), en pasado <b>spent</b>."},
+{q:"Can I ___ your pencil? I'll give it back in a minute.", o:["lend","borrow","take"], a:1, e:"Yo recibo el lápiz y lo devuelvo → <b>borrow</b> (pedir prestado). <i>Lend</i> es lo que hace quien presta."},
+{q:"Don't forget to ___ your homework before class.", o:["make","take","do"], a:2, e:"Con tareas se usa <b>do</b>: <i>do your homework</i>."},
+{q:"I always ___ the same mistake with this word.", o:["make","do","have"], a:0, e:"La combinación correcta es <b>make a mistake</b> (cometer un error)."},
+{q:"Her friends ___ a surprise party for her birthday.", o:["composed","organized","conducted"], a:1, e:"Una fiesta se <b>organiza</b>: <i>organize a party</i>. <i>Compose</i> se usa con música y <i>conduct</i> con investigaciones u orquestas."},
+{q:"Put the ice cream in the ___ so it doesn't melt.", o:["oven","cupboard","freezer"], a:2, e:"Para que el helado no se derrita va en el <b>freezer</b> (congelador)."},
+{q:"The doctor says I need to eat more vegetables and follow a healthy ___.", o:["diet","snack","supper"], a:0, e:"<i>Follow a healthy diet</i> = llevar una alimentación saludable → <b>diet</b>."}
+]},
+
+{
+id:10, tag:"Partes 4 y 7", title:"Modales, infinitivo y gerundio",
+desc:"can, could, must, should, might, don't have to; verbos que van con to + verbo o con -ing.",
+ask:"Choose the correct option to complete the sentence.",
+theory:`
+<h3>Verbos modales</h3>
+<p>Los modales van seguidos del <b>verbo en forma base</b>, sin <i>to</i> y sin -s: <span class="en">She can play</span> (no <span class="en">she can to play / she cans play</span>).</p>
+<div class="scroll-x"><table>
+<tr><th>Modal</th><th>Significado</th><th>Ejemplo</th></tr>
+<tr><td class="en">can / could</td><td>Habilidad, permiso (could = pasado o más cortés)</td><td class="en">I could swim when I was five.</td></tr>
+<tr><td class="en">must / have to</td><td>Obligación</td><td class="en">You must wear a helmet.</td></tr>
+<tr><td class="en">mustn't</td><td>Prohibición (no debes)</td><td class="en">You mustn't smoke here.</td></tr>
+<tr><td class="en">don't have to</td><td>No es necesario (no tienes que)</td><td class="en">It's Sunday. We don't have to work.</td></tr>
+<tr><td class="en">should</td><td>Consejo (deberías)</td><td class="en">You should sleep more.</td></tr>
+<tr><td class="en">may / might</td><td>Posibilidad (puede que)</td><td class="en">It might rain later.</td></tr>
+<tr><td class="en">would</td><td>Condicional o estilo indirecto</td><td class="en">He said he would continue to eat burgers.</td></tr>
+</table></div>
+<div class="warn"><b>mustn't no es lo mismo que don't have to</b><span class="en">You mustn't go</span> = está prohibido ir. <span class="en">You don't have to go</span> = no es obligatorio, puedes ir si quieres.</div>
+
+<h3>¿To + verbo o verbo-ing?</h3>
+<div class="scroll-x"><table>
+<tr><th>Van con <span class="en">to + verbo</span></th><th>Van con <span class="en">verbo-ing</span></th><th>Aceptan ambos</th></tr>
+<tr><td class="en">want, need, decide, hope, plan, learn, would like, promise</td><td class="en">enjoy, finish, stop, avoid, mind, practice, keep</td><td class="en">like, love, start, begin, continue</td></tr>
+</table></div>
+<div class="ex"><span class="en">He wanted to finish his studies.</span><span>want + <b>to</b> + verbo</span></div>
+<div class="ex"><span class="en">I enjoy reading.</span><span>enjoy + verbo<b>-ing</b></span></div>
+<div class="ex"><span class="en">She is interested in learning French.</span><span>Después de preposición (in, at, of, about…) siempre <b>-ing</b></span></div>
+
+<div class="tip"><b>Estrategia TyT</b>Si antes del espacio hay un modal (<i>can, will, would, should…</i>), la respuesta es el <b>verbo base</b>. Si hay una preposición, busca la forma <b>-ing</b>. En el cuadernillo: <span class="en">"he said he would ___ to eat burgers"</span> → <b>continue</b> (verbo base después de <i>would</i>, y encaja con <i>to eat</i>).</div>
+`,
+qs:[
+{q:"You ___ smoke in the hospital. It's forbidden.", o:["mustn't","don't have to","should"], a:0, e:"<i>Forbidden</i> = prohibido → <b>mustn't</b>. <i>Don't have to</i> significa que no es necesario."},
+{q:"You look tired. You ___ go to bed early.", o:["mustn't","should","can't"], a:1, e:"Es un consejo → <b>should</b> (deberías)."},
+{q:"It's Sunday, so we ___ go to school. We can stay home.", o:["mustn't","can't","don't have to"], a:2, e:"No es obligatorio ir, pero tampoco está prohibido → <b>don't have to</b>."},
+{q:"When I was five, I ___ swim very well.", o:["could","can","must"], a:0, e:"Habilidad en el pasado (<i>when I was five</i>) → <b>could</b>."},
+{q:"She can ___ the guitar very well.", o:["to play","play","playing"], a:1, e:"Después de un modal va el verbo base, sin <i>to</i>: <b>can play</b>."},
+{q:"I really enjoy ___ in the rain.", o:["to walk","walk","walking"], a:2, e:"<i>Enjoy</i> siempre va con verbo-ing: <b>enjoy walking</b>."},
+{q:"They decided ___ a new car.", o:["to buy","buying","buy"], a:0, e:"<i>Decide</i> va con <i>to</i> + verbo: <b>decided to buy</b>."},
+{q:"He is interested in ___ French.", o:["learn","learning","to learn"], a:1, e:"Después de una preposición (<i>in</i>) se usa verbo-ing: <b>interested in learning</b>."},
+{q:"Take an umbrella. It ___ rain later; the sky is grey.", o:["might","has","is"], a:0, e:"Expresa posibilidad → <b>might</b> + verbo base (puede que llueva)."},
+{q:"He said he would continue ___ burgers every day.", o:["eat","ate","to eat"], a:2, e:"<i>Continue</i> acepta <i>to</i> + verbo o -ing; de estas opciones solo <b>to eat</b> es correcta."}
+]}
+];
+
+const SIM = [
+{part:1, name:"Vocabulario y definiciones", kind:"bank", title:"Travel",
+instr:"Lea las descripciones. ¿Qué palabra (A–H) concuerda con cada descripción? Sobran tres opciones.",
+bank:["passport","suitcase","platform","pilot","tent","map","receipt","guide"],
+items:[
+{q:"You put your clothes in this when you go on a trip.", a:1, e:"<b>Suitcase</b> = maleta, donde se guarda la ropa para viajar."},
+{q:"This person flies planes.", a:3, e:"<b>Pilot</b> = piloto, la persona que <i>flies</i> (conduce) aviones."},
+{q:"You sleep in this when you go camping.", a:4, e:"<b>Tent</b> = carpa. <i>Camping</i> es la palabra clave."},
+{q:"You stand here to wait for the train.", a:2, e:"<b>Platform</b> = andén, donde se espera el tren."},
+{q:"This person shows tourists the interesting places of a city.", a:7, e:"<b>Guide</b> = guía turístico. El <i>map</i> también muestra lugares, pero no es una persona (<i>this person</i>)."}
+]},
+{part:1, name:"Vocabulario y definiciones", kind:"bank", title:"Health and home",
+instr:"Lea las descripciones. ¿Qué palabra (A–H) concuerda con cada descripción? Sobran tres opciones.",
+bank:["pharmacy","blanket","dentist","oven","umbrella","nurse","pillow","ladder"],
+items:[
+{q:"You use this to bake a cake.", a:3, e:"<b>Oven</b> = horno. <i>Bake</i> significa hornear."},
+{q:"This person takes care of your teeth.", a:2, e:"<b>Dentist</b> = odontólogo. <i>Teeth</i> = dientes. La <i>nurse</i> cuida pacientes en general."},
+{q:"You can buy medicine in this place.", a:0, e:"<b>Pharmacy</b> = farmacia."},
+{q:"It keeps you warm when you sleep in bed.", a:1, e:"<b>Blanket</b> = cobija, que da calor (<i>keeps you warm</i>). La <i>pillow</i> está en la cama pero no abriga."},
+{q:"You use this to climb up to a high place, for example, to paint a wall.", a:7, e:"<b>Ladder</b> = escalera de mano. <i>Climb up</i> = subir."}
+]},
+{part:2, name:"Avisos y letreros", kind:"sign",
+instr:"¿Dónde puede ver estos avisos? Marque A, B o C.",
+items:[
+{sign:"Please do not touch the paintings", o:["in a museum","in a hospital","at a bus stop"], a:0, e:"<i>Paintings</i> = pinturas / cuadros → <b>in a museum</b>."},
+{sign:"Maximum speed 30 km/h. School zone", o:["in a classroom","on a road","at a beach"], a:1, e:"<i>Speed</i> (velocidad) se refiere a vehículos → <b>on a road</b> (en una vía)."},
+{sign:"Swimming not allowed after 6 p.m. No lifeguard", o:["in a library","at an airport","at a beach"], a:2, e:"<i>Swimming</i> y <i>lifeguard</i> (salvavidas) → <b>at a beach</b>."},
+{sign:"Fitting rooms: maximum 3 items", o:["in a clothes shop","in a bakery","at a bank"], a:0, e:"<i>Fitting rooms</i> = probadores → <b>in a clothes shop</b>."},
+{sign:"Visiting hours: 2–4 p.m. Please be quiet", o:["at a stadium","in a hospital","in a supermarket"], a:1, e:"<i>Visiting hours</i> (horario de visitas) y pedir silencio → <b>in a hospital</b>."},
+{sign:"Take a number and wait to be called. Cashiers 1–4", o:["at a park","on a bus","at a bank"], a:2, e:"Tomar un turno y esperar a los <i>cashiers</i> (cajeros) → <b>at a bank</b>."},
+{sign:"Please stand behind the yellow line until the train stops", o:["at a metro station","in a car","on a farm"], a:0, e:"<i>Train</i> y <i>yellow line</i> (línea de seguridad del andén) → <b>at a metro station</b>."}
+]},
+{part:3, name:"Conversaciones cortas", kind:"dialog",
+instr:"Complete las conversaciones. Seleccione la respuesta más adecuada A, B o C.",
+items:[
+{say:"Could you pass me the salt, please?", o:["Yes, I could.","Here you are.","It's very salty."], a:1, e:"Al entregar algo que te piden se dice <b>Here you are</b> (aquí tienes). <i>Yes, I could</i> no cumple la petición."},
+{say:"I passed my driving test!", o:["Congratulations!","Never mind.","Good luck!"], a:0, e:"Ante una buena noticia: <b>Congratulations!</b> <i>Good luck</i> se dice <i>antes</i> de una prueba."},
+{say:"What time does the bank open?", o:["For two hours.","On the corner.","At nine o'clock."], a:2, e:"<i>What time</i> pregunta por la hora → <b>At nine o'clock</b>."},
+{say:"Do you mind if I open the window?", o:["Yes, please do.","No, not at all.","I don't know it."], a:1, e:"<i>Do you mind…?</i> = ¿te molesta…? Para permitirlo se dice <b>No, not at all</b>. Decir <i>Yes</i> significaría que sí molesta."},
+{say:"How long have you lived here?", o:["For three years.","Since two years.","Three years ago."], a:0, e:"<i>How long</i> + presente perfecto → duración con <b>for</b>. <i>Since two years</i> es incorrecto."},
+{say:"I've lost my keys again!", o:["Yes, they are.","I'm glad to hear that.","Oh no! Where did you last see them?"], a:2, e:"Es un problema, así que la respuesta natural muestra preocupación y ayuda: <b>Oh no! Where did you last see them?</b>"},
+{say:"Who's that man over there?", o:["He's very well.","He's our new teacher.","It's John's."], a:1, e:"<i>Who</i> pregunta por la identidad de una persona → <b>He's our new teacher</b>."},
+{say:"Would you rather take the bus or walk?", o:["Let's walk. It's a nice day.","Yes, I would.","The bus is number 20."], a:0, e:"<i>Would you rather A or B?</i> pide escoger una opción → <b>Let's walk</b>. No se responde con <i>yes</i> o <i>no</i>."}
+]},
+{part:4, name:"Texto para completar (gramática)", kind:"cloze", title:"My first job",
+instr:"Lea el texto y seleccione la palabra correcta para cada espacio. Marque A, B o C.",
+text:"When I was sixteen, I {0} a summer job in a small hotel in Salento. I worked there {1} three months. Every morning I {2} up at five o'clock to help in the kitchen. The owner, Mrs. Ríos, was a woman {3} always smiled at the guests. The work was hard, {4} I learned a lot. I met tourists from many countries, and I practiced my English with {5} every day. Since then, I {6} to Salento many times. It is still one of the {7} beautiful places I know.",
+items:[
+{o:["get","got","getting"], a:1, e:"La historia está en pasado (<i>When I was sixteen</i>) → <b>got</b>."},
+{o:["since","during","for"], a:2, e:"<i>Three months</i> es una duración → <b>for</b>."},
+{o:["got","get","have got"], a:0, e:"Es un hábito en el pasado (<i>Every morning</i> cuando tenía 16) → pasado simple: <b>got</b> up."},
+{o:["which","who","where"], a:1, e:"<i>A woman</i> es una persona → <b>who</b>."},
+{o:["so","because","but"], a:2, e:"Contraste: el trabajo era duro, <i>pero</i> aprendió mucho → <b>but</b>."},
+{o:["them","they","their"], a:0, e:"Después de la preposición <i>with</i> se usa pronombre objeto → <b>them</b> (los turistas)."},
+{o:["returned","have returned","return"], a:1, e:"<i>Since then</i> (desde entonces hasta hoy) → presente perfecto: <b>have returned</b>."},
+{o:["more","much","most"], a:2, e:"<i>One of the … places</i> → superlativo de un adjetivo largo: <b>the most beautiful</b>."}
+]},
+{part:5, name:"Comprensión de lectura", kind:"reading",
+instr:"Lea el texto y responda las preguntas. Marque A, B o C.",
+passage:{title:"Valentina's green idea", body:[
+"Valentina Ospina lives in a small town in Caldas. When she was 13, a big fire destroyed part of the forest near her school. Many students were sad, but Valentina decided to do something. She asked her classmates to bring one small tree each to school.",
+"In the first month, only twelve students participated. Then, a local radio station told her story, and people from other towns started to send trees and money. Four years later, the group \"Raíces\" has planted more than 8,000 trees.",
+"Valentina now visits schools to teach children how to take care of the environment. \"You don't need to be an adult to change things,\" she says. \"You only need a plan and friends who believe in it.\" Next year, she wants to study biology at university."]},
+items:[
+{q:"The fire happened when Valentina was", o:["12 years old.","13 years old.","17 years old."], a:1, e:"<i>When she was 13, a big fire destroyed…</i> El número 12 corresponde a los estudiantes que participaron al principio."},
+{q:"At the beginning, Valentina's project", o:["was small.","was very famous.","had a lot of money."], a:0, e:"<i>In the first month, only twelve students participated</i> → el proyecto empezó <b>pequeño</b>."},
+{q:"The project grew because", o:["the school paid for it.","the government helped.","a radio station talked about it."], a:2, e:"<i>A local radio station told her story, and people… started to send trees and money</i>."},
+{q:"How many trees has the group planted?", o:["Exactly 4,000.","More than 8,000.","Twelve."], a:1, e:"<i>Has planted more than 8,000 trees</i>. Cuatro es el número de años."},
+{q:"Today, Valentina", o:["teaches children in schools.","works at a radio station.","sells trees."], a:0, e:"<i>Valentina now visits schools to teach children</i>."},
+{q:"Valentina believes that young people", o:["need adults to help them.","should wait until they are older.","can make changes."], a:2, e:"<i>You don't need to be an adult to change things</i> → los jóvenes <b>pueden generar cambios</b>."},
+{q:"In the future, Valentina plans to", o:["study science.","become a teacher.","move to another country."], a:0, e:"Quiere estudiar <i>biology</i>, que es una ciencia → <b>study science</b>. Es un ejemplo de paráfrasis con una palabra más general."}
+]},
+{part:6, name:"Comprensión de lectura (texto extenso)", kind:"reading",
+instr:"Lea el texto y responda las preguntas. Marque A, B o C.",
+passage:{title:"Working from home: dream or nightmare?", body:[
+"When companies sent their employees home during the pandemic, many people thought it would be temporary. Years later, remote work is still common, and experts are still discussing whether it is good or bad.",
+"Supporters say that working from home saves time and money. Employees do not have to travel for hours in traffic, and companies can rent smaller offices. Some studies show that people who work remotely are more productive because there are fewer interruptions.",
+"However, not everyone agrees. Psychologists warn that remote workers often feel lonely and find it difficult to separate their job from their personal life. \"When your office is your living room, you never really leave work,\" explains Dr. Andrea Mejía, a psychologist who studies work habits. Young employees may also miss opportunities to learn from more experienced colleagues.",
+"For this reason, many organizations now prefer a hybrid model, in which employees spend two or three days in the office and the rest at home. According to Dr. Mejía, the key is balance: \"Technology gives us freedom, but we also need human contact.\""]},
+items:[
+{q:"When remote work started, many people believed it", o:["would be permanent.","would not last long.","would be difficult."], a:1, e:"<i>Many people thought it would be temporary</i> → <b>no duraría mucho</b>. <i>Temporary</i> es lo opuesto de <i>permanent</i>."},
+{q:"One advantage of remote work mentioned in the text is that", o:["employees don't lose time travelling.","employees earn more money.","offices become bigger."], a:0, e:"<i>Employees do not have to travel for hours in traffic</i> → no pierden tiempo desplazándose. El texto dice que las oficinas pueden ser <i>más pequeñas</i>."},
+{q:"According to some studies, remote workers are more productive because", o:["they work longer hours.","they have better computers.","they are interrupted less."], a:2, e:"<i>Because there are fewer interruptions</i> → <b>they are interrupted less</b>. Es una paráfrasis."},
+{q:"What problem do psychologists mention?", o:["Workers may feel alone.","Workers get sick more often.","Workers don't use technology."], a:0, e:"<i>Remote workers often feel lonely</i> → <b>feel alone</b> (se sienten solos)."},
+{q:"When Dr. Mejía says \"you never really leave work\", she means that", o:["people cannot go out of their homes.","it is hard to stop thinking about your job.","people lose their jobs."], a:1, e:"Es una expresión figurada: cuando la oficina es tu sala, es difícil <b>desconectarte del trabajo</b>. Se relaciona con <i>separate their job from their personal life</i>."},
+{q:"What is the main idea of the text?", o:["Offices are no longer necessary.","Remote work should stop completely.","Remote work has pros and cons, so balance is important."], a:2, e:"El texto presenta ventajas, desventajas y concluye con el modelo híbrido y la idea de <i>balance</i> → <b>tiene pros y contras</b>."}
+]},
+{part:7, name:"Texto para completar (vocabulario y gramática)", kind:"cloze", title:"Sleeping at the office",
+instr:"Lea el texto y seleccione la palabra adecuada para cada espacio. Marque A, B, C o D.",
+text:"Kenji Tanaka, 34, has worked for the same company in Tokyo {0} twelve years. Last year, his boss {1} him that the company wanted employees to rest more. So the company {2} a small room with beds where workers can sleep for twenty minutes after lunch. At first, Kenji {3} not like the idea. \"I thought my colleagues would {4} I was lazy,\" he says. But now he takes a short nap almost every day. Experts say that a short sleep in the afternoon can {5} people concentrate better and make fewer mistakes. Kenji agrees: \"I feel much more {6} in the afternoon now.\" Other companies, {7} are worried about stressed employees, are now {8} the same idea.",
+items:[
+{o:["since","for","during","ago"], a:1, e:"<i>Twelve years</i> es una duración con presente perfecto → <b>for</b>."},
+{o:["said","spoke","told","talked"], a:2, e:"Hay una persona después del espacio (<i>him</i>) → <b>told</b>. <i>Said</i> no va seguido de la persona."},
+{o:["wore","built","drove","spent"], a:1, e:"Se construye una habitación → <b>built</b> (construyó)."},
+{o:["did","was","does","had"], a:0, e:"Negación en pasado simple: <b>did not</b> + verbo base (<i>did not like</i>)."},
+{o:["thinking","thought","think","to think"], a:2, e:"Después de <i>would</i> va el verbo base → <b>think</b>."},
+{o:["give","help","offer","allow"], a:1, e:"<b>Help</b> + persona + verbo base: <i>help people concentrate</i>. <i>Allow</i> necesitaría <i>to</i> (allow people to concentrate)."},
+{o:["tired","bored","sleepy","energetic"], a:3, e:"La siesta tiene un efecto positivo, así que se siente más <b>energetic</b> (con energía). Las demás opciones contradicen el texto."},
+{o:["which","where","when","whose"], a:0, e:"Se refiere a <i>other companies</i> (organizaciones) → <b>which</b>."},
+{o:["making","trying","spending","saying"], a:1, e:"<i>Try an idea</i> = probar una idea → <b>trying</b>."}
+]}
+];
+
+/* ---------- Utilidades ---------- */
+const $ = (s, el = document) => el.querySelector(s);
+const app = $("#app");
+const LET = ["A","B","C","D","E","F","G","H"];
+const POS = ["¡Excelente!","¡Muy bien!","¡Correcto!","¡Así se hace!","¡Perfecto!","¡Bien hecho!","¡Vas muy bien!"];
+const NEG = ["No es correcto","Casi, pero no","Revisemos esta","Esa no es la respuesta","No exactamente"];
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const gapify = s => esc(s).replace(/___/g, '<span class="gapline"></span>');
+const SIM_MS = 60 * 60 * 1000;
+const LS = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
+  del(k){ try { localStorage.removeItem(k); } catch(e){} }
+};
+
+/* ---------- Aplanado del simulacro ---------- */
+const FLAT = [];
+SIM.forEach((sec, si) => { sec.start = FLAT.length; sec.items.forEach((it, ii) => FLAT.push({ si, ii, n: FLAT.length + 1 })); });
+const TOTAL = FLAT.length;
+const PARTS = [...new Set(SIM.map(s => s.part))];
+const partName = p => SIM.find(s => s.part === p).name;
+const optsOf = (sec, it) => sec.kind === "bank" ? sec.bank : it.o;
+
+/* ---------- Estado ---------- */
+let state = { view: "home" };
+let prog = LS.get("tyt_prog", {});
+let hist = LS.get("tyt_hist", []);
+let sim = LS.get("tyt_sim", null);
+let timerInt = null;
+let lastSec = -1;
+
+/* ---------- Tema ---------- */
+const themeBtn = $("#themeBtn");
+const savedTheme = LS.get("tyt_theme", null);
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+themeBtn.addEventListener("click", () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next; LS.set("tyt_theme", next);
+});
+
+/* ---------- Modal ---------- */
+function modal({ title, body, ok = "Aceptar", cancel = "Cancelar", onOk, danger }){
+  const root = $("#modalRoot");
+  root.innerHTML = `<div class="modal-bg" role="dialog" aria-modal="true"><div class="modal"><h3>${title}</h3><p>${body}</p><div class="row">${cancel ? `<button class="btn ghost" id="mCancel">${cancel}</button>` : ""}<button class="btn ${danger ? "accent" : "primary"}" id="mOk">${ok}</button></div></div></div>`;
+  const close = () => root.innerHTML = "";
+  $("#mOk").onclick = () => { close(); onOk && onOk(); };
+  const c = $("#mCancel"); if (c) c.onclick = close;
+  $("#mOk").focus();
+}
+
+/* ---------- Navegación ---------- */
+function go(view, extra = {}){
+  if (state.view === "sim" && view !== "sim" && view !== "results"){
+    modal({ title: "¿Salir del simulacro?", body: "Tus respuestas quedan guardadas, pero el cronómetro sigue corriendo. Podrás retomarlo desde la sección Simulacro.", ok: "Salir", cancel: "Seguir en el simulacro", onOk: () => { state = Object.assign({ view }, extra); render(); window.scrollTo(0, 0); } });
+    return;
+  }
+  state = Object.assign({ view }, extra); render(); window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-go]"); if (b) go(b.dataset.go); });
+window.addEventListener("beforeunload", e => { if (state.view === "sim"){ e.preventDefault(); e.returnValue = ""; } });
+
+function render(){
+  clearInterval(timerInt); timerInt = null;
+  const v = state.view;
+  const map = { lesson: "lessons", simIntro: "simIntro", sim: "simIntro", results: "simIntro" };
+  document.querySelectorAll(".nav button").forEach(b => b.classList.toggle("active", b.dataset.go === (map[v] || v)));
+  if (v === "home") app.innerHTML = viewHome();
+  else if (v === "lessons") app.innerHTML = viewLessons();
+  else if (v === "lesson") app.innerHTML = viewLesson();
+  else if (v === "simIntro") app.innerHTML = viewSimIntro();
+  else if (v === "sim"){ app.innerHTML = viewSim(); startTimer(); }
+  else if (v === "results") app.innerHTML = viewResults();
+}
+
+/* ---------- Inicio ---------- */
+function viewHome(){
+  const done = LESSONS.filter(l => prog[l.id] != null).length;
+  const best = hist.length ? Math.max(...hist.map(h => h.score)) : null;
+  const sheet = [[1,2],[2,0],[3,1],[4,3]].map(([n, on]) => `<div class="sheet-row"><span class="n">${n}.</span><span>${["Vocabulario","Avisos","Conversaciones","Gramática"][n-1]}</span><span class="bubbles">${["A","B","C","D"].map((l, i) => `<span class="bub ${i === on ? "on" : ""}">${l}</span>`).join("")}</span></div>`).join("");
+  const partsInfo = [
+    ["Parte 1","Relacionar descripciones con palabras","Vocabulario cotidiano"],
+    ["Parte 2","Identificar dónde se ve un aviso","Lectura de avisos y lugares"],
+    ["Parte 3","Completar conversaciones cortas","Funciones comunicativas"],
+    ["Parte 4","Completar un texto (3 opciones)","Gramática en contexto"],
+    ["Parte 5","Leer un texto corto y responder","Comprensión literal"],
+    ["Parte 6","Leer un texto más extenso y responder","Inferencia e idea principal"],
+    ["Parte 7","Completar un texto (4 opciones)","Vocabulario y gramática"]
+  ];
+  return `
+  <section class="hero">
+    <div class="hero-main">
+      <h1>Prepárate para el módulo de inglés Saber TyT</h1>
+      <p>Estudia la gramática y el vocabulario que evalúa la prueba, practica con preguntas por tipo y mide tu avance con un simulacro cronometrado de 55 preguntas.</p>
+      <div class="row">
+        <button class="btn primary" data-go="lessons">Empezar las lecciones</button>
+        <button class="btn" data-go="simIntro">Presentar el simulacro</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>${done}/10</b><span>lecciones practicadas</span></div>
+        <div class="stat"><b>${best != null ? best : "–"}</b><span>mejor puntaje en simulacro</span></div>
+        <div class="stat"><b>${hist.length}</b><span>simulacros presentados</span></div>
+      </div>
+    </div>
+    <aside class="sheet" aria-label="Así se ve una hoja de respuestas">
+      <h3>Hoja de respuestas</h3>
+      ${sheet}
+      <p class="muted" style="font-size:13.5px;margin:12px 0 0">Las instrucciones de la prueba están en español; las preguntas y los textos, en inglés. Aquí practicarás igual.</p>
+    </aside>
+  </section>
+  <section class="paths">
+    <div class="path"><span class="step">1</span><h3>Estudia</h3><p>Cada lección explica en español la gramática y el vocabulario, con ejemplos tomados del modelo de la prueba.</p></div>
+    <div class="path"><span class="step">2</span><h3>Practica</h3><p>10 preguntas por lección con retroalimentación inmediata: sabrás por qué acertaste o te equivocaste.</p></div>
+    <div class="path"><span class="step">3</span><h3>Simula</h3><p>55 preguntas de las 7 partes en 60 minutos. Al final verás tu puntaje sobre 100 y la corrección de cada error.</p></div>
+  </section>
+  <h2>Estructura del módulo de inglés</h2>
+  <p class="muted">El módulo se compone de 7 partes. Todas las preguntas son de selección múltiple con única respuesta.</p>
+  <div class="scroll-x"><table class="parts-table">
+    <tr><th>Parte</th><th>Qué debes hacer</th><th>Qué se evalúa</th></tr>
+    ${partsInfo.map(p => `<tr><td><span class="tag">${p[0]}</span></td><td>${p[1]}</td><td>${p[2]}</td></tr>`).join("")}
+  </table></div>`;
+}
+
+/* ---------- Lista de lecciones ---------- */
+function viewLessons(){
+  return `
+  <h1>Lecciones</h1>
+  <p class="muted" style="max-width:70ch">Cada lección tiene una explicación en español y una práctica de 10 preguntas. Te recomendamos seguirlas en orden: las tres primeras corresponden a las partes 1, 2 y 3; las siguientes cubren la gramática y la lectura de las partes 4 a 7.</p>
+  <div class="lesson-grid">
+  ${LESSONS.map(l => {
+    const b = prog[l.id];
+    return `<button class="lcard" data-act="openLesson" data-id="${l.id}">
+      <div class="top"><span class="lnum">${l.id}</span><span class="tag">${l.tag}</span></div>
+      <h3>${l.title}</h3>
+      <p>${l.desc}</p>
+      <div class="lprog"><span class="bar"><i style="width:${b != null ? b * 10 : 0}%"></i></span><span>${b != null ? `Mejor: ${b}/10` : "Sin practicar"}</span></div>
+    </button>`;
+  }).join("")}
+  </div>`;
+}
+
+/* ---------- Lección ---------- */
+function curLesson(){ return LESSONS.find(l => l.id === state.id); }
+
+function viewLesson(){
+  const l = curLesson();
+  const tab = state.tab || "teoria";
+  let body;
+  if (tab === "teoria"){
+    body = `<article class="theory">${l.theory}</article>
+    <div class="row" style="margin-top:20px"><button class="btn primary" data-act="tab" data-tab="practica">Ir a la práctica de 10 preguntas</button></div>`;
+  } else body = viewPractice(l);
+  return `
+  <button class="crumb" data-go="lessons">‹ Todas las lecciones</button>
+  <div class="lhead"><span class="lnum">${l.id}</span><div><span class="tag">${l.tag}</span><h1 style="margin-top:6px">${l.title}</h1><p class="muted" style="margin:0">${l.desc}</p></div></div>
+  <div class="tabs" role="tablist">
+    <button role="tab" class="${tab === "teoria" ? "on" : ""}" data-act="tab" data-tab="teoria">Explicación</button>
+    <button role="tab" class="${tab === "practica" ? "on" : ""}" data-act="tab" data-tab="practica">Práctica</button>
+  </div>
+  ${body}`;
+}
+
+function passageHTML(p, open){
+  return `<details class="passage" ${open ? "open" : ""}><summary>Texto: ${esc(p.title)}</summary><div style="margin-top:10px">${p.body.map(x => `<p>${esc(x)}</p>`).join("")}</div></details>`;
+}
+
+function stemHTML(q, fallbackAsk){
+  let h = "";
+  if (q.sign) h += `<div class="sign">${esc(q.sign)}</div><p class="qtext">${q.q ? gapify(q.q) : "Where can you see this notice?"}</p>`;
+  else if (q.say) h += `<div class="dialog"><div class="bubble a"><b>A:</b>${esc(q.say)}</div><div class="bubble b"><b>B:</b>…</div></div><p class="qtext" style="font-size:16px">${fallbackAsk}</p>`;
+  else h += `<p class="qtext">${gapify(q.q)}</p>`;
+  return h;
+}
+
+function viewPractice(l){
+  if (!state.pr) state.pr = { i: 0, ans: [], fb: [] };
+  const pr = state.pr, n = l.qs.length;
+  const dots = l.qs.map((q, k) => {
+    const a = pr.ans[k];
+    const c = a == null ? (k === pr.i ? "cur" : "") : (a === q.a ? "ok" : "bad");
+    return `<i class="${c}"></i>`;
+  }).join("");
+  if (pr.i >= n) return viewSummary(l, dots);
+  const q = l.qs[pr.i], ch = pr.ans[pr.i], answered = ch != null;
+  const opts = q.o.map((o, k) => {
+    let cls = "";
+    if (answered){ if (k === q.a) cls = "correct"; else if (k === ch) cls = "wrong"; }
+    return `<button class="opt ${cls}" data-act="lans" data-i="${k}" ${answered ? "disabled" : ""}><span class="lt">${LET[k]}</span><span>${esc(o)}</span></button>`;
+  }).join("");
+  let fb = "";
+  if (answered){
+    const ok = ch === q.a;
+    fb = `<div class="fb ${ok ? "ok" : "bad"}" role="status"><h4>${pr.fb[pr.i]}</h4>
+      ${ok ? "" : `<p>La respuesta correcta es <b>${LET[q.a]}. ${esc(q.o[q.a])}</b></p>`}
+      <p>${q.e}</p></div>
+      <div class="row" style="margin-top:16px;justify-content:flex-end"><button class="btn primary" data-act="lnext">${pr.i === n - 1 ? "Ver mis resultados" : "Siguiente pregunta"}</button></div>`;
+  }
+  const passage = q.p ? passageHTML(l.passages[q.p], true) : "";
+  return `<div class="practice">
+    <div class="dots" aria-hidden="true">${dots}</div>
+    ${passage}
+    <div class="qcard">
+      <div class="qmeta">Pregunta ${pr.i + 1} de ${n}${!q.say && !q.sign ? " · " + esc(l.ask) : ""}</div>
+      ${stemHTML(q, l.ask)}
+      <div class="opts">${opts}</div>
+      ${fb}
+    </div>
+  </div>`;
+}
+
+function viewSummary(l, dots){
+  const pr = state.pr;
+  const score = l.qs.filter((q, k) => pr.ans[k] === q.a).length;
+  let msg;
+  if (score === 10) msg = "¡Dominio total de esta lección! Estás listo para el siguiente tema.";
+  else if (score >= 8) msg = "Muy buen trabajo. Repasa las preguntas que fallaste y continúa.";
+  else if (score >= 6) msg = "Vas por buen camino. Te conviene releer la explicación de los puntos que fallaste.";
+  else msg = "Te recomendamos volver a la explicación y repetir la práctica. ¡Con práctica se mejora!";
+  const wrong = l.qs.map((q, k) => ({ q, k })).filter(x => pr.ans[x.k] !== x.q.a);
+  const next = LESSONS.find(x => x.id === l.id + 1);
+  return `<div class="practice">
+    <div class="dots" aria-hidden="true">${dots}</div>
+    <div class="summary">
+      <div class="big-score">${score}<span style="font-size:24px;color:var(--muted)">/10</span></div>
+      <p style="font-size:17px;margin-top:10px">${msg}</p>
+      ${wrong.length ? `<h3 style="margin-top:20px">Preguntas para repasar</h3>` + wrong.map(({ q, k }) => `<div class="mistake"><b>${k + 1}.</b> ${esc(q.sign || q.say || q.q)}<br><span class="c">Correcta: ${esc(q.o[q.a])}</span> <span class="muted">(elegiste: ${esc(q.o[pr.ans[k]])})</span></div>`).join("") : ""}
+      <div class="row" style="margin-top:22px">
+        <button class="btn" data-act="lretry">Repetir la práctica</button>
+        <button class="btn ghost" data-act="tab" data-tab="teoria">Repasar la explicación</button>
+        ${next ? `<button class="btn primary" data-act="openLesson" data-id="${next.id}">Siguiente lección</button>` : `<button class="btn accent" data-go="simIntro">Ir al simulacro</button>`}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ---------- Simulacro: intro ---------- */
+function viewSimIntro(){
+  const running = sim && sim.endAt > Date.now();
+  const counts = PARTS.map(p => [p, FLAT.filter(f => SIM[f.si].part === p).length]);
+  return `
+  <h1>Simulacro Saber TyT: inglés</h1>
+  <div class="intro">
+    <div class="panel">
+      <div class="facts">
+        <div class="fact"><b>${TOTAL}</b><span>preguntas</span></div>
+        <div class="fact"><b>60</b><span>minutos</span></div>
+        <div class="fact"><b>100</b><span>puntos máximo</span></div>
+      </div>
+      <h3>Antes de empezar</h3>
+      <ul class="rules">
+        <li>El simulacro incluye las 7 partes del módulo, en el mismo orden de la prueba.</li>
+        <li>Puedes avanzar, retroceder y <b>marcar preguntas</b> para revisarlas antes de terminar.</li>
+        <li>No verás si aciertas mientras respondes, igual que en la prueba real.</li>
+        <li>Cuando el tiempo llegue a cero, el simulacro se entrega automáticamente.</li>
+        <li>Al final verás tu puntaje sobre 100, tu desempeño por parte y la corrección de cada pregunta.</li>
+      </ul>
+      <div class="row" style="margin-top:16px">
+        ${running ? `<button class="btn primary" data-act="simResume">Continuar el simulacro en curso</button><button class="btn ghost" data-act="simRestart">Empezar uno nuevo</button>` : `<button class="btn primary" data-act="simStart">Iniciar simulacro</button>`}
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Distribución de preguntas</h3>
+      <div class="hist">${counts.map(([p, c]) => `<div><span>Parte ${p}: ${partName(p)}</span><b>${c}</b></div>`).join("")}</div>
+      ${hist.length ? `<h3 style="margin-top:22px">Tus intentos</h3><div class="hist">${hist.slice(-5).reverse().map(h => `<div><span>${new Date(h.date).toLocaleDateString("es-CO", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span><b>${h.score}/100</b></div>`).join("")}</div>
+      ${LS.get("tyt_last", null) ? `<button class="btn sm" style="margin-top:14px" data-act="lastRes">Ver la revisión del último intento</button>` : ""}` : ""}
+    </div>
+  </div>`;
+}
+
+function newSim(){
+  const now = Date.now();
+  sim = { answers: Array(TOTAL).fill(null), flags: Array(TOTAL).fill(false), cur: 0, startAt: now, endAt: now + SIM_MS, showNav: false };
+  LS.set("tyt_sim", sim); lastSec = -1;
+  go("sim");
+}
+
+/* ---------- Simulacro: vista ---------- */
+function fmtTime(ms){ const s = Math.ceil(ms / 1000); const m = Math.floor(s / 60); return `${String(m).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`; }
+
+function clozeHTML(sec, curGlobal){
+  const txt = esc(sec.text).replace(/\{(\d+)\}/g, (m, d) => {
+    const g = sec.start + Number(d);
+    const a = sim.answers[g];
+    const it = sec.items[Number(d)];
+    const cls = ["gap", a != null ? "filled" : "", g === curGlobal ? "cur" : ""].join(" ");
+    return `<span class="${cls}" data-act="snav" data-i="${g}" role="button" tabindex="0">(${g + 1}) ${a != null ? esc(it.o[a]) : "______"}</span>`;
+  });
+  return `<h4>${esc(sec.title)}</h4><p>${txt}</p>`;
+}
+function readingHTML(sec){ return `<h4>${esc(sec.passage.title)}</h4>${sec.passage.body.map(p => `<p>${esc(p)}</p>`).join("")}`; }
+
+function viewSim(){
+  const f = FLAT[sim.cur], sec = SIM[f.si], it = sec.items[f.ii];
+  const answered = sim.answers.filter(x => x != null).length;
+  const left = Math.max(0, sim.endAt - Date.now());
+  const opts = optsOf(sec, it);
+  const ch = sim.answers[sim.cur];
+  let stem = "";
+  if (sec.kind === "bank") stem = `<div class="bankbox">Tema: <b>${esc(sec.title)}</b>. Cada palabra (A–H) se usa una sola vez; sobran tres.</div><p class="qtext">${esc(it.q)}</p>`;
+  else if (sec.kind === "sign") stem = `<div class="sign">${esc(it.sign)}</div><p class="qtext">Where can you see this notice?</p>`;
+  else if (sec.kind === "dialog") stem = `<div class="dialog"><div class="bubble a"><b>A:</b>${esc(it.say)}</div><div class="bubble b"><b>B:</b>…</div></div>`;
+  else if (sec.kind === "cloze") stem = `<p class="qtext">Choose the correct word for gap (${f.n}).</p>`;
+  else stem = `<p class="qtext">${esc(it.q)}</p>`;
+  const optHTML = `<div class="opts ${opts.length > 4 ? "two" : ""}">${opts.map((o, k) => `<button class="opt ${ch === k ? "sel" : ""}" data-act="sans" data-i="${k}"><span class="lt">${LET[k]}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+  const q = `<div class="qcard"><div class="qmeta">Pregunta ${f.n} de ${TOTAL}${sim.flags[sim.cur] ? " · marcada para revisar" : ""}</div>${stem}${optHTML}
+    <div class="simnav">
+      <button class="btn" data-act="sprev" ${sim.cur === 0 ? "disabled" : ""}>‹ Anterior</button>
+      <button class="btn flagbtn ${sim.flags[sim.cur] ? "on" : ""}" data-act="sflag">${sim.flags[sim.cur] ? "Quitar marca" : "Marcar para revisar"}</button>
+      ${sim.cur === TOTAL - 1 ? `<button class="btn accent" data-act="sfinish">Finalizar</button>` : `<button class="btn primary" data-act="snext">Siguiente ›</button>`}
+    </div></div>`;
+  const hasText = sec.kind === "cloze" || sec.kind === "reading";
+  const main = hasText ? `<div class="split"><div class="textpanel" id="tp">${sec.kind === "cloze" ? clozeHTML(sec, sim.cur) : readingHTML(sec)}</div><div>${q}</div></div>` : `<div style="max-width:760px">${q}</div>`;
+  const nav = sim.showNav ? `<div class="navpanel">${PARTS.map(p => `<div class="navpart"><small>Parte ${p}: ${partName(p)}</small><div class="navgrid">${FLAT.filter(x => SIM[x.si].part === p).map(x => { const g = x.n - 1; return `<button data-act="snav" data-i="${g}" class="${sim.answers[g] != null ? "ans" : ""} ${g === sim.cur ? "cur" : ""} ${sim.flags[g] ? "flg" : ""}" aria-label="Pregunta ${x.n}">${x.n}</button>`; }).join("")}</div></div>`).join("")}
+    <div class="legend"><span><i class="a"></i>Respondida</span><span><i></i>Sin responder</span><span><i class="f"></i>Marcada</span></div></div>` : "";
+  return `
+  <div class="simbar">
+    <div class="timer ${left <= 5 * 60000 ? "danger" : left <= 10 * 60000 ? "warn" : ""}" id="timerBox" aria-live="off"><span aria-hidden="true">⏱</span><span id="timer">${fmtTime(left)}</span></div>
+    <div class="simprog"><small>${answered} de ${TOTAL} respondidas</small><div class="bar"><i style="width:${answered / TOTAL * 100}%"></i></div></div>
+    <button class="btn sm" data-act="stoggle">${sim.showNav ? "Ocultar preguntas" : "Ver todas las preguntas"}</button>
+    <button class="btn sm accent" data-act="sfinish">Finalizar</button>
+  </div>
+  ${nav}
+  <div class="sechead"><span class="tag">Parte ${sec.part}</span><h2 style="margin-top:6px">${sec.name}</h2><p>${sec.instr}</p></div>
+  ${main}`;
+}
+
+function rerenderSim(){
+  const tp = $("#tp"), st = tp ? tp.scrollTop : 0;
+  const prev = lastSec;
+  render();
+  const cur = FLAT[sim.cur].si;
+  const tp2 = $("#tp");
+  if (tp2){
+    if (prev === cur) tp2.scrollTop = st;
+    const g = tp2.querySelector(".gap.cur");
+    if (g){
+      const top = g.offsetTop - tp2.offsetTop;
+      if (top < tp2.scrollTop + 20 || top > tp2.scrollTop + tp2.clientHeight - 40) tp2.scrollTop = Math.max(0, top - 60);
+    }
+  }
+  if (prev !== cur) window.scrollTo(0, 0);
+  lastSec = cur;
+}
+
+function startTimer(){
+  lastSec = FLAT[sim.cur].si;
+  timerInt = setInterval(() => {
+    const left = sim.endAt - Date.now();
+    const el = $("#timer"), box = $("#timerBox");
+    if (el){ el.textContent = fmtTime(Math.max(0, left)); box.classList.toggle("warn", left <= 10 * 60000 && left > 5 * 60000); box.classList.toggle("danger", left <= 5 * 60000); }
+    if (left <= 0) finishSim(true);
+  }, 1000);
+}
+
+function finishSim(auto){
+  clearInterval(timerInt); timerInt = null;
+  const used = Math.min(SIM_MS, Date.now() - sim.startAt);
+  const res = { answers: sim.answers.slice(), used, date: Date.now(), auto };
+  const sc = scoreOf(res.answers);
+  hist.push({ score: sc.score, date: res.date }); LS.set("tyt_hist", hist);
+  LS.set("tyt_last", res); LS.del("tyt_sim"); sim = null;
+  state = { view: "results", res, filter: "wrong" };
+  render(); window.scrollTo(0, 0);
+  if (auto) modal({ title: "Se acabó el tiempo", body: "El simulacro se entregó automáticamente con las respuestas que alcanzaste a marcar.", ok: "Ver resultados", cancel: null });
+}
+
+/* ---------- Resultados ---------- */
+function scoreOf(answers){
+  let correct = 0, blank = 0;
+  FLAT.forEach((f, g) => { const it = SIM[f.si].items[f.ii]; if (answers[g] == null) blank++; else if (answers[g] === it.a) correct++; });
+  return { correct, blank, wrong: TOTAL - correct - blank, score: Math.round(correct / TOTAL * 100) };
+}
+function levelOf(s){
+  if (s >= 91) return ["B+", "Supera el nivel B1"];
+  if (s >= 76) return ["B1", "Usuario independiente"];
+  if (s >= 56) return ["A2", "Usuario básico"];
+  if (s >= 36) return ["A1", "Usuario básico inicial"];
+  return ["A-", "Por debajo de A1"];
+}
+function clozeSentence(sec, ii){
+  const t = sec.text.replace(/\{(\d+)\}/g, (m, d) => Number(d) === ii ? "@@" : "___");
+  const pos = t.indexOf("@@");
+  let s = t.lastIndexOf(". ", pos); s = s < 0 ? 0 : s + 2;
+  let e = t.indexOf(". ", pos); e = e < 0 ? t.length : e + 1;
+  return esc(t.slice(s, e)).replace("@@", `<span class="gapline"></span>`).replace(/___/g, "___");
+}
+
+function viewResults(){
+  const res = state.res;
+  const sc = scoreOf(res.answers);
+  const [lv, lvTxt] = levelOf(sc.score);
+  const R = 72, C = 2 * Math.PI * R, off = C * (1 - sc.score / 100);
+  const color = sc.score >= 76 ? "var(--ok)" : sc.score >= 56 ? "var(--primary)" : sc.score >= 36 ? "var(--accent)" : "var(--bad)";
+  let msg;
+  if (sc.score >= 91) msg = "¡Resultado sobresaliente! Tu dominio del inglés está por encima de lo que exige la prueba.";
+  else if (sc.score >= 76) msg = "¡Muy buen resultado! Revisa tus errores para consolidar lo aprendido.";
+  else if (sc.score >= 56) msg = "Buen avance. Identifica las partes con menor puntaje y repasa las lecciones relacionadas.";
+  else if (sc.score >= 36) msg = "Vas construyendo bases. Te recomendamos repasar las lecciones y volver a intentarlo.";
+  else msg = "Este es tu punto de partida. Estudia las lecciones con calma y vuelve a presentar el simulacro.";
+  const parts = PARTS.map(p => {
+    const idx = FLAT.map((f, g) => ({ f, g })).filter(x => SIM[x.f.si].part === p);
+    const c = idx.filter(x => res.answers[x.g] === SIM[x.f.si].items[x.f.ii].a).length;
+    return { p, c, t: idx.length };
+  });
+  const filter = state.filter || "wrong";
+  const items = FLAT.map((f, g) => ({ f, g, sec: SIM[f.si], it: SIM[f.si].items[f.ii] })).filter(x => {
+    const a = res.answers[x.g];
+    if (filter === "wrong") return a !== x.it.a;
+    if (filter === "ok") return a === x.it.a;
+    return true;
+  });
+  const rev = items.map(({ f, g, sec, it }) => {
+    const a = res.answers[g], ok = a === it.a, opts = optsOf(sec, it);
+    let stem = "";
+    if (sec.kind === "bank") stem = `<div class="q">${esc(it.q)}</div>`;
+    else if (sec.kind === "sign") stem = `<div class="sign">${esc(it.sign)}</div><div class="q">Where can you see this notice?</div>`;
+    else if (sec.kind === "dialog") stem = `<div class="q">A: ${esc(it.say)}<br>B: …</div>`;
+    else if (sec.kind === "cloze") stem = `<div class="q" style="font-family:var(--serif);font-weight:400;font-size:16.5px">${clozeSentence(sec, f.ii)}</div>`;
+    else stem = `<div class="q"><span class="muted" style="font-weight:500">Texto "${esc(sec.passage.title)}":</span> ${esc(it.q)}</div>`;
+    return `<div class="rev ${a == null ? "blank" : ok ? "ok" : "bad"}">
+      <div class="h"><span>Pregunta ${f.n} · Parte ${sec.part}</span><span>${a == null ? "Sin responder" : ok ? "Correcta" : "Incorrecta"}</span></div>
+      ${stem}
+      ${a == null ? `<div class="ans y">No respondiste esta pregunta.</div>` : ok ? "" : `<div class="ans y">Tu respuesta: ${LET[a]}. ${esc(opts[a])}</div>`}
+      <div class="ans c">Respuesta correcta: ${LET[it.a]}. ${esc(opts[it.a])}</div>
+      <div class="exp">${it.e}</div>
+    </div>`;
+  }).join("");
+  const mins = Math.floor(res.used / 60000), secs = Math.round(res.used % 60000 / 1000);
+  return `
+  <h1>Resultados del simulacro</h1>
+  <section class="res-top">
+    <div class="ring">
+      <svg width="170" height="170" viewBox="0 0 170 170" aria-hidden="true"><circle cx="85" cy="85" r="${R}" fill="none" stroke="var(--line)" stroke-width="14"/><circle cx="85" cy="85" r="${R}" fill="none" stroke="${color}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${off}"/></svg>
+      <div class="val"><div><b>${sc.score}</b><span>de 100 puntos</span></div></div>
+    </div>
+    <div>
+      <p style="font-size:18px;font-weight:600;margin-bottom:6px">${msg}</p>
+      <div class="chips"><span class="chip ok">${sc.correct} correctas</span><span class="chip bad">${sc.wrong} incorrectas</span><span class="chip">${sc.blank} sin responder</span><span class="chip">Tiempo: ${mins} min ${secs} s</span></div>
+      <span class="level">Nivel estimado: ${lv} (${lvTxt})</span>
+      <p class="muted" style="font-size:13px;margin:8px 0 0">El nivel es orientativo y se calcula con base en este simulacro; no equivale al resultado oficial del ICFES.</p>
+    </div>
+  </section>
+  <section class="byparts">
+    <h3>Desempeño por parte</h3>
+    ${parts.map(x => `<div class="pbar"><span>Parte ${x.p}: ${partName(x.p)}</span><span class="bar"><i style="width:${x.c / x.t * 100}%"></i></span><b>${x.c}/${x.t}</b></div>`).join("")}
+  </section>
+  <div class="row"><button class="btn primary" data-act="simStart">Presentar otro simulacro</button><button class="btn" data-go="lessons">Repasar las lecciones</button></div>
+  <h2 style="margin-top:30px">Revisión de preguntas</h2>
+  <div class="filters">
+    <button class="btn sm ${filter === "wrong" ? "primary" : ""}" data-act="rfilter" data-f="wrong">Incorrectas y sin responder (${sc.wrong + sc.blank})</button>
+    <button class="btn sm ${filter === "ok" ? "primary" : ""}" data-act="rfilter" data-f="ok">Correctas (${sc.correct})</button>
+    <button class="btn sm ${filter === "all" ? "primary" : ""}" data-act="rfilter" data-f="all">Todas (${TOTAL})</button>
+  </div>
+  ${rev || `<p class="muted">No hay preguntas en esta categoría. ¡Excelente!</p>`}`;
+}
+
+/* ---------- Acciones ---------- */
+app.addEventListener("click", e => {
+  const t = e.target.closest("[data-act]"); if (!t || t.disabled) return;
+  const act = t.dataset.act;
+  switch (act){
+    case "openLesson": state = { view: "lesson", id: Number(t.dataset.id), tab: "teoria" }; render(); window.scrollTo(0, 0); break;
+    case "tab": state.tab = t.dataset.tab; render(); window.scrollTo(0, 0); break;
+    case "lans": {
+      const l = curLesson(), pr = state.pr, k = Number(t.dataset.i);
+      if (pr.ans[pr.i] != null) break;
+      pr.ans[pr.i] = k; pr.fb[pr.i] = k === l.qs[pr.i].a ? pick(POS) : pick(NEG);
+      render(); const fb = $(".fb"); if (fb) fb.scrollIntoView({ block: "nearest", behavior: "smooth" }); break;
+    }
+    case "lnext": {
+      const l = curLesson(), pr = state.pr; pr.i++;
+      if (pr.i >= l.qs.length){ const s = l.qs.filter((q, k) => pr.ans[k] === q.a).length; prog[l.id] = Math.max(prog[l.id] ?? 0, s); LS.set("tyt_prog", prog); }
+      render(); window.scrollTo(0, 0); break;
+    }
+    case "lretry": state.pr = { i: 0, ans: [], fb: [] }; state.tab = "practica"; render(); window.scrollTo(0, 0); break;
+    case "simStart": newSim(); break;
+    case "simRestart": modal({ title: "¿Empezar un simulacro nuevo?", body: "Se descartará el simulacro que tienes en curso y sus respuestas.", ok: "Empezar de nuevo", danger: true, onOk: () => { LS.del("tyt_sim"); sim = null; newSim(); } }); break;
+    case "simResume": if (sim && sim.endAt > Date.now()) go("sim"); else if (sim) finishSim(true); break;
+    case "lastRes": state = { view: "results", res: LS.get("tyt_last", null), filter: "wrong" }; render(); window.scrollTo(0, 0); break;
+    case "sans": sim.answers[sim.cur] = Number(t.dataset.i); LS.set("tyt_sim", sim); rerenderSim(); break;
+    case "snext": if (sim.cur < TOTAL - 1){ sim.cur++; LS.set("tyt_sim", sim); rerenderSim(); } break;
+    case "sprev": if (sim.cur > 0){ sim.cur--; LS.set("tyt_sim", sim); rerenderSim(); } break;
+    case "snav": sim.cur = Number(t.dataset.i); LS.set("tyt_sim", sim); rerenderSim(); break;
+    case "sflag": sim.flags[sim.cur] = !sim.flags[sim.cur]; LS.set("tyt_sim", sim); rerenderSim(); break;
+    case "stoggle": sim.showNav = !sim.showNav; LS.set("tyt_sim", sim); rerenderSim(); break;
+    case "sfinish": {
+      const blank = sim.answers.filter(x => x == null).length, flg = sim.flags.filter(Boolean).length;
+      const extra = [blank ? `Tienes <b>${blank}</b> pregunta${blank > 1 ? "s" : ""} sin responder.` : "Respondiste todas las preguntas.", flg ? `Hay <b>${flg}</b> marcada${flg > 1 ? "s" : ""} para revisar.` : ""].join(" ");
+      modal({ title: "¿Finalizar el simulacro?", body: `${extra} Una vez finalices no podrás cambiar tus respuestas.`, ok: "Finalizar y ver resultados", cancel: "Seguir respondiendo", onOk: () => finishSim(false) });
+      break;
+    }
+    case "rfilter": state.filter = t.dataset.f; render(); break;
+  }
+});
+app.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.matches(".gap[data-act]")){ e.preventDefault(); e.target.click(); } });
+
+/* ---------- Inicio ---------- */
+if (sim && sim.endAt <= Date.now()){ finishSim(true); } else render();
+</script>
+</body></html>
